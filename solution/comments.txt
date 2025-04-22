@@ -1,4 +1,4 @@
-Comments for self-test -------- Mon Apr 21, 2025 at 21:39:3 EDT
+Comments for self-test -------- Mon Apr 21, 2025 at 23:19:12 EDT
 parsing the build-run.txt file ... done
 
 building executable ...
@@ -30,23 +30,7 @@ Output base name: simplify
   test-outputs/simplify.txt exists---comparing with solution
 Running "diff" on your output and the solution:
   diff test-outputs/simplify.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/simplify.txt
-  OUTCOMES DIFFER:
-vvvvv
-27c27
-< a
----
-> a+a
-83,84c83,84
-< (a+/*)*
-< (/*+a)*
----
-> a*
-> a*
-87c87
-< (/*+c+/*)*
----
-> c*
-^^^^^
+  outcomes match (correct)
 done
 
 testing arg --empty ...
@@ -140,7 +124,7 @@ Output base name: not-using
     (terminated with zero status (status ignored))
   standard error output:
 vvvvv
-Error: --not-using requires a single character argument.
+Error: --not-using requires one symbol argument
 ^^^^^
   test-outputs/not-using.txt exists---comparing with solution
 Running "diff" on your output and the solution:
@@ -167,41 +151,7 @@ Output base name: starts-with-a
   test-outputs/starts-with-a.txt exists---comparing with solution
 Running "diff" on your output and the solution:
   diff test-outputs/starts-with-a.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-a.txt
-  OUTCOMES DIFFER:
-vvvvv
-15d14
-< yes
-19d17
-< yes
-21c19,21
-< yes
----
-> no
-> no
-> no
-33c33
-< yes
----
-> no
-60c60
-< yes
----
-> no
-76,78c76,78
-< yes
-< yes
-< yes
----
-> no
-> no
-> no
-88,89c88,89
-< yes
-< yes
----
-> no
-> no
-^^^^^
+  outcomes match (correct)
   Running the command:
   ./regex_tool --starts-with b < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-b.txt 2> test-outputs/starts-with-b-err.txt
 Output base name: starts-with-b
@@ -209,24 +159,7 @@ Output base name: starts-with-b
   test-outputs/starts-with-b.txt exists---comparing with solution
 Running "diff" on your output and the solution:
   diff test-outputs/starts-with-b.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-b.txt
-  OUTCOMES DIFFER:
-vvvvv
-19d18
-< yes
-21c20,21
-< yes
----
-> no
-> no
-33c33
-< yes
----
-> no
-88c88
-< yes
----
-> no
-^^^^^
+  outcomes match (correct)
   Running the command:
   ./regex_tool --starts-with c < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-c.txt 2> test-outputs/starts-with-c-err.txt
 Output base name: starts-with-c
@@ -234,13 +167,7 @@ Output base name: starts-with-c
   test-outputs/starts-with-c.txt exists---comparing with solution
 Running "diff" on your output and the solution:
   diff test-outputs/starts-with-c.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-c.txt
-  OUTCOMES DIFFER:
-vvvvv
-21c21
-< yes
----
-> no
-^^^^^
+  outcomes match (correct)
   Running the command:
   ./regex_tool --starts-with d < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-d.txt 2> test-outputs/starts-with-d-err.txt
 Output base name: starts-with-d
@@ -248,13 +175,7 @@ Output base name: starts-with-d
   test-outputs/starts-with-d.txt exists---comparing with solution
 Running "diff" on your output and the solution:
   diff test-outputs/starts-with-d.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-d.txt
-  OUTCOMES DIFFER:
-vvvvv
-87c87
-< yes
----
-> no
-^^^^^
+  outcomes match (correct)
   Running the command:
   ./regex_tool --starts-with e < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-e.txt 2> test-outputs/starts-with-e-err.txt
 Output base name: starts-with-e
@@ -273,17 +194,1313 @@ Running "diff" on your output and the solution:
   outcomes match (correct)
 done
 
+testing arg --reverse ...
+  Running the command:
+  (./regex_tool --reverse | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/reverse.txt 2> test-outputs/reverse-err.txt
+Output base name: reverse
+    (terminated with zero status (status ignored))
+  test-outputs/reverse.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/reverse.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/reverse.txt
+  outcomes match (correct)
+done
+
+testing arg --ends-with ...
+  Running the command:
+  ./regex_tool --ends-with a < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/ends-with-a.txt 2> test-outputs/ends-with-a-err.txt
+Output base name: ends-with-a
+    (terminated with zero status (status ignored))
+  test-outputs/ends-with-a.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/ends-with-a.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/ends-with-a.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --ends-with b < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/ends-with-b.txt 2> test-outputs/ends-with-b-err.txt
+Output base name: ends-with-b
+    (terminated with zero status (status ignored))
+  test-outputs/ends-with-b.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/ends-with-b.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/ends-with-b.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --ends-with c < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/ends-with-c.txt 2> test-outputs/ends-with-c-err.txt
+Output base name: ends-with-c
+    (terminated with zero status (status ignored))
+  test-outputs/ends-with-c.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/ends-with-c.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/ends-with-c.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --ends-with d < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/ends-with-d.txt 2> test-outputs/ends-with-d-err.txt
+Output base name: ends-with-d
+    (terminated with zero status (status ignored))
+  test-outputs/ends-with-d.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/ends-with-d.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/ends-with-d.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --ends-with e < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/ends-with-e.txt 2> test-outputs/ends-with-e-err.txt
+Output base name: ends-with-e
+    (terminated with zero status (status ignored))
+  test-outputs/ends-with-e.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/ends-with-e.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/ends-with-e.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --ends-with f < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/ends-with-f.txt 2> test-outputs/ends-with-f-err.txt
+Output base name: ends-with-f
+    (terminated with zero status (status ignored))
+  test-outputs/ends-with-f.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/ends-with-f.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/ends-with-f.txt
+  outcomes match (correct)
+done
+
+testing arg --prefixes ...
+  Running the command:
+  (./regex_tool --prefixes | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/prefixes.txt 2> test-outputs/prefixes-err.txt
+Output base name: prefixes
+    (terminated with zero status (status ignored))
+  test-outputs/prefixes.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/prefixes.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/prefixes.txt
+  outcomes match (correct)
+done
+
+testing arg --bs-for-a ...
+  Running the command:
+  (./regex_tool --bs-for-a | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/bs-for-a.txt 2> test-outputs/bs-for-a-err.txt
+Output base name: bs-for-a
+    (terminated with zero status (status ignored))
+  test-outputs/bs-for-a.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/bs-for-a.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/bs-for-a.txt
+  outcomes match (correct)
+done
+
+testing arg --insert ...
+  Running the command:
+  (./regex_tool --insert a | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/insert-a.txt 2> test-outputs/insert-a-err.txt
+Output base name: insert-a
+    (terminated with zero status (status ignored))
+  test-outputs/insert-a.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/insert-a.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/insert-a.txt
+  OUTCOMES DIFFER:
+vvvvv
+8,28c8,28
+< a*aa*+a*(aa+aa)a*
+< a
+< a+a
+< a+a+a
+< a+a+a
+< a+a+a
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< ((abcd)*a(abcd)*+(abcd)*((((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da))(abcd)*)(cdab)*+(abcd)*((cdab)*a(cdab)*+(cdab)*((((ac+ca)d+c(ad+da))a+cd(aa+aa))b+cda(ab+ba))(cdab)*)
+< (aa)*a(aa)*+(aa)*((aa+aa)a+a(aa+aa))(aa)*+(aa+aa)a*+a(a*aa*+a*(aa+aa)a*)
+< ((aa+aa)b+a(ab+ba))c+ab(ac+ca)+((a*aa*+a*(aa+aa)a*)b*+a*(b*ab*+b*(ab+ba)b*))c*+a*b*(c*ac*+c*(ac+ca)c*)
+< aa+aa+ab+ba+c*ac*+c*(ac+ca)c*+ad+da
+< ((aa+aa+ab+ba+a)(c+/*+d)+(a+b+/*)(ac+ca+a+ad+da))(/*+e+f)+(a+b+/*)(c+/*+d)(a+ae+ea+af+fa)
+< aa+aa+aa+aa+aa+aa
+< (aa+aa)a*+a(a*aa*+a*(aa+aa)a*)+(b*ab*+b*(ab+ba)b*)b+b*(ab+ba)
+---
+> a+a**(aa+aa)a**
+> a+/**//**
+> (a+/**//**)/*+/*(a+/**//**)
+> ((a+/**//**)/*+/*(a+/**//**))/*+/*/*(a+/**//**)
+> (a+/**//**)/*/*+/*((a+/**//**)/*+/*(a+/**//**))
+> ((a+/**//**)/*+/*(a+/**//**))/*+/*/*(a+/**//**)
+> /a+/(aa+aa)
+> (aa+aa)/+a/
+> /+/
+> (a+/**//**)/+/*/
+> //+//
+> (a+(a+b)**(aa+aa+ab+ba)(a+b)**)/+(a+b)*/
+> /(a+b)*+/(a+(a+b)**(aa+aa+ab+ba)(a+b)**)
+> ((a+(abc)**(((aa+aa)b+a(ab+ba))c+ab(ac+ca))(abc)**)/+(abc)*/)(cba)*+(abc)*/(a+(cba)**(((ac+ca)b+c(ab+ba))a+cb(aa+aa))(cba)**)+/(a+b+c)+/(aa+aa+ab+ba+ac+ca)+(a+a**(aa+aa)a**+a+b**(ab+ba)b**+a+c**(ac+ca)c**)/+(a*+b*+c*)/
+> (a+(abcd)**((((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da))(abcd)**)(cdab)*+(abcd)*(a+(cdab)**((((ac+ca)d+c(ad+da))a+cd(aa+aa))b+cda(ab+ba))(cdab)**)
+> a+(aa)**((aa+aa)a+a(aa+aa))(aa)**+(aa+aa)a*+a(a+a**(aa+aa)a**)
+> ((aa+aa)b+a(ab+ba))c+ab(ac+ca)+((a+a**(aa+aa)a**)b*+a*(a+b**(ab+ba)b**))c*+a*b*(a+c**(ac+ca)c**)
+> aa+aa+ab+ba+a+c**(ac+ca)c**+ad+da
+> ((aa+aa+ab+ba+a+/**//**)(c+/*+d)+(a+b+/*)(ac+ca+a+/**//**+ad+da))(/*+e+f)+(a+b+/*)(c+/*+d)(a+/**//**+ae+ea+af+fa)
+> (aa+aa)/*+a(a+/**//**)+(a+/**//**)a+/*(aa+aa)
+> (aa+aa)a*+a(a+a**(aa+aa)a**)+(a+b**(ab+ba)b**)b+b*(ab+ba)
+30c30
+< a+aa+aa
+---
+> a+/**//**+/+/+aa+aa
+32,34c32,34
+< a+a+a+a+a+a+a
+< ac+ca+ad+da
+< aa+aa+(aa+aa)b+a(ab+ba)+((aa+aa)b+a(ab+ba))c+ab(ac+ca)+(((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da)+a
+---
+> a+/********(a+/*******(a+/******(a+/*****(a+/****(a+/***(a+/**//**)/***)/****)/*****)/******)/*******)/********
+> (a+(a+b)**(aa+aa+ab+ba)(a+b)**)/+(a+b)*/+ac+ca+ad+da
+> aa+aa+(aa+aa)b+a(ab+ba)+((aa+aa)b+a(ab+ba))c+ab(ac+ca)+(((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da)+a+/**//**
+36,39c36,39
+< ((aa+aa)b+a(ab+ba))c+ab(ac+ca)+((ab+ba)c+b(ac+ca))d+bc(ad+da)+(abcde)*a(abcde)*+(abcde)*(((((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da))e+abcd(ae+ea))(abcde)*
+< ((aa+aa)b*+a(b*ab*+b*(ab+ba)b*))c+ab*(ac+ca)
+< (a*aa*+a*(aa+aa)a*)b+a*(ab+ba)+ac+ca
+< (aa+aa+ab+ba)c+(a+b)(ac+ca)+(ad+da)(a+(bc)*)+d(aa+aa+(bc)*a(bc)*+(bc)*((ab+ba)c+b(ac+ca))(bc)*)
+---
+> ((aa+aa)b+a(ab+ba))c+ab(ac+ca)+((ab+ba)c+b(ac+ca))d+bc(ad+da)+a+(abcde)**(((((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da))e+abcd(ae+ea))(abcde)**
+> ((aa+aa)b*+a(a+b**(ab+ba)b**))c+ab*(ac+ca)
+> (a+a**(aa+aa)a**)b+a*(ab+ba)+ac+ca
+> (aa+aa+ab+ba)c+(a+b)(ac+ca)+(ad+da)(a+(bc)*)+d(aa+aa+a+(bc)**((ab+ba)c+b(ac+ca))(bc)**)
+42,49c42,49
+< (aa+aa)b*+a(b*ab*+b*(ab+ba)b*)
+< (a*aa*+a*(aa+aa)a*)b+a*(ab+ba)
+< (ab)*a(ab)*+(ab)*((aa+aa)b+a(ab+ba))(ab)*
+< aa+aa+b*ab*+b*(ab+ba)b*
+< a*aa*+a*(aa+aa)a*+ab+ba
+< (a+b)*a(a+b)*+(a+b)*(aa+aa+ab+ba)(a+b)*
+< aa+aa+ab+ba+ac+ca+ad+da+a
+< (aa+aa)b+a(ab+ba)+(ab+ba)c+b(ac+ca)+(ac+ca)d+c(ad+da)
+---
+> (aa+aa)b*+a(a+b**(ab+ba)b**)
+> (a+a**(aa+aa)a**)b+a*(ab+ba)
+> a+(ab)**((aa+aa)b+a(ab+ba))(ab)**
+> aa+aa+a+b**(ab+ba)b**
+> a+a**(aa+aa)a**+ab+ba
+> a+(a+b)**(aa+aa+ab+ba)(a+b)**
+> aa+aa+ab+ba+ac+ca+ad+da+a+/**//**
+> (aa+aa)b+a(ab+ba)+(ab+ba)c+b(ac+ca)+(ac+ca)d+c(ad+da)+/
+52,66c52,66
+< (cd)*a(cd)*+(cd)*((ac+ca)d+c(ad+da))(cd)*+((a+/*)bc(/*+d))*a((a+/*)bc(/*+d))*+((a+/*)bc(/*+d))*((((aa+aa+a)b+(a+/*)(ab+ba))c+(a+/*)b(ac+ca))(/*+d)+(a+/*)bc(a+ad+da))((a+/*)bc(/*+d))*
+< (((aa+aa+a)(b+/*)+(a+/*)(ab+ba+a))(cd)*+(a+/*)(b+/*)((cd)*a(cd)*+(cd)*((ac+ca)d+c(ad+da))(cd)*))e+(a+/*)(b+/*)(cd)*(ae+ea)
+< (aa+aa)(a+b+c+d)*+a((a+b+c+d)*a(a+b+c+d)*+(a+b+c+d)*(aa+aa+ab+ba+ac+ca+ad+da)(a+b+c+d)*)
+< (dc)*a(dc)*+(dc)*((ad+da)c+d(ac+ca))(dc)*+((d+/*)cb(/*+a))*a((d+/*)cb(/*+a))*+((d+/*)cb(/*+a))*((((ad+da+a)c+(d+/*)(ac+ca))b+(d+/*)c(ab+ba))(/*+a)+(d+/*)cb(a+aa+aa))((d+/*)cb(/*+a))*
+< (((ae+ea)(dc)*+e((dc)*a(dc)*+(dc)*((ad+da)c+d(ac+ca))(dc)*))(b+/*)+e(dc)*(ab+ba+a))(a+/*)+e(dc)*(b+/*)(aa+aa+a)
+< ((a+b+c+d)*a(a+b+c+d)*+(a+b+c+d)*(aa+aa+ab+ba+ac+ca+ad+da)(a+b+c+d)*)a+(a+b+c+d)*(aa+aa)
+< /
+< ((aa+aa+aa)b+a(ab+ba))c+ab(ac+ca)
+< /
+< ((aa+aa)b+a(ab+ba))c+ab(ac+ca)+abca
+< (abc)*a(abc)*+(abc)*(((aa+aa)b+a(ab+ba))c+ab(ac+ca))(abc)*
+< ((ab+ba)c+b(ac+ca))(abc)*+bc((abc)*a(abc)*+(abc)*(((aa+aa)b+a(ab+ba))c+ab(ac+ca))(abc)*)
+< (((abc)*a(abc)*+(abc)*(((aa+aa)b+a(ab+ba))c+ab(ac+ca))(abc)*)a+(abc)*(aa+aa))b+(abc)*a(ab+ba)
+< aa+aa+(aa+aa)b+a(ab+ba)+(ab+ba)c+b(ac+ca)+(((ab+ba)a+b(aa+aa))c+ba(ac+ca))a+bac(aa+aa)+(abcd)*a(abcd)*+(abcd)*((((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da))(abcd)*
+< ((caaaa+ab)*a(caaaa+ab)*+(caaaa+ab)*(((((ac+ca)a+c(aa+aa))a+ca(aa+aa))a+caa(aa+aa))a+caaa(aa+aa)+(aa+aa)b+a(ab+ba))(caaaa+ab)*)a+(caaaa+ab)*(aa+aa)+(ab+ba)b+b(ab+ba)
+---
+> a+(cd)**((ac+ca)d+c(ad+da))(cd)**+a+((a+/*)bc(/*+d))**((((aa+aa+a+/**//**)b+(a+/*)(ab+ba))c+(a+/*)b(ac+ca))(/*+d)+(a+/*)bc(a+/**//**+ad+da))((a+/*)bc(/*+d))**
+> (((aa+aa+a+/**//**)(b+/*)+(a+/*)(ab+ba+a+/**//**))(cd)*+(a+/*)(b+/*)(a+(cd)**((ac+ca)d+c(ad+da))(cd)**))e+(a+/*)(b+/*)(cd)*(ae+ea)
+> (aa+aa)(a+b+c+d)*+a(a+(a+b+c+d)**(aa+aa+ab+ba+ac+ca+ad+da)(a+b+c+d)**)
+> a+(dc)**((ad+da)c+d(ac+ca))(dc)**+a+((d+/*)cb(/*+a))**((((ad+da+a+/**//**)c+(d+/*)(ac+ca))b+(d+/*)c(ab+ba))(/*+a)+(d+/*)cb(a+/**//**+aa+aa))((d+/*)cb(/*+a))**
+> (((ae+ea)(dc)*+e(a+(dc)**((ad+da)c+d(ac+ca))(dc)**))(b+/*)+e(dc)*(ab+ba+a+/**//**))(a+/*)+e(dc)*(b+/*)(aa+aa+a+/**//**)
+> (a+(a+b+c+d)**(aa+aa+ab+ba+ac+ca+ad+da)(a+b+c+d)**)a+(a+b+c+d)*(aa+aa)
+> ((/a+/(aa+aa))b+/a(ab+ba))c+/ab(ac+ca)
+> (((a+/**//**)a+/*(aa+aa))b+/*a(ab+ba))c+/*ab(ac+ca)
+> (((aa+aa)b+a(ab+ba))c+ab(ac+ca))/+abc/
+> (((aa+aa)b+a(ab+ba))c+ab(ac+ca))/*+abc(a+/**//**)
+> a+(abc)**(((aa+aa)b+a(ab+ba))c+ab(ac+ca))(abc)**
+> ((ab+ba)c+b(ac+ca))(abc)*+bc(a+(abc)**(((aa+aa)b+a(ab+ba))c+ab(ac+ca))(abc)**)
+> ((a+(abc)**(((aa+aa)b+a(ab+ba))c+ab(ac+ca))(abc)**)a+(abc)*(aa+aa))b+(abc)*a(ab+ba)
+> aa+aa+(aa+aa)b+a(ab+ba)+(ab+ba)c+b(ac+ca)+(((ab+ba)a+b(aa+aa))c+ba(ac+ca))a+bac(aa+aa)+a+(abcd)**((((aa+aa)b+a(ab+ba))c+ab(ac+ca))d+abc(ad+da))(abcd)**
+> (a+(caaaa+ab)**(((((ac+ca)a+c(aa+aa))a+ca(aa+aa))a+caa(aa+aa))a+caaa(aa+aa)+(aa+aa)b+a(ab+ba))(caaaa+ab)**)a+(caaaa+ab)*(aa+aa)+(ab+ba)b+b(ab+ba)
+68,90c68,90
+< (ab(c+/*))*a(ab(c+/*))*+(ab(c+/*))*(((aa+aa)b+a(ab+ba))(c+/*)+ab(ac+ca+a))(ab(c+/*))*
+< (ab+bc(a+d)*)*a(ab+bc(a+d)*)*+(ab+bc(a+d)*)*((aa+aa)b+a(ab+ba)+((ab+ba)c+b(ac+ca))(a+d)*+bc((a+d)*a(a+d)*+(a+d)*(aa+aa+ad+da)(a+d)*))(ab+bc(a+d)*)*
+< a+a
+< a*aa*+a*(a*aa*+a*(aa+aa)a*)a*
+< a*aa*+a*(a*aa*+a*(a*aa*+a*(a*aa*+a*(a*aa*+a*(aa+aa)a*)a*)a*)a*)a*
+< a*aa*+a*(a*aa*+a*(aa+aa)a*)a*
+< a*aa*+a*(a*aa*+a*(aa+aa)a*)a*
+< /
+< /
+< /
+< (ac+ca)d+c(ad+da)
+< aa+aa+aa
+< aa+aa+aa
+< aa+aa+aa+aa
+< ab+ab+ba
+< a*aa*+a*(aa+aa+a)a*
+< a*aa*+a*(a+aa+aa)a*
+< /**a/**+/**(a+a)/**
+< a+(aa+aa)b+a(ab+ba)
+< (c+/*)*a(c+/*)*+(c+/*)*(a+ac+ca+a)(c+/*)*
+< /**a/**+/**(a+a)/**
+< a+a
+< (/*+/*+/*+/*)*a(/*+/*+/*+/*)*+(/*+/*+/*+/*)*(a+a+a+a+a)(/*+/*+/*+/*)*
+---
+> a+(ab(c+/*))**(((aa+aa)b+a(ab+ba))(c+/*)+ab(ac+ca+a+/**//**))(ab(c+/*))**
+> a+(ab+bc(a+d)*)**((aa+aa)b+a(ab+ba)+((ab+ba)c+b(ac+ca))(a+d)*+bc(a+(a+d)**(aa+aa+ad+da)(a+d)**))(ab+bc(a+d)*)**
+> (a+/**//**)/*+/*(a+/**//**)
+> a+a***(a+a**(aa+aa)a**)a***
+> a+a******(a+a*****(a+a****(a+a***(a+a**(aa+aa)a**)a***)a****)a*****)a******
+> a+a***(a+a**(aa+aa)a**)a***+/
+> /+a+a***(a+a**(aa+aa)a**)a***
+> /(a+bc+def)+/(aa+aa+(ab+ba)c+b(ac+ca)+((ad+da)e+d(ae+ea))f+de(af+fa))
+> (((((aa+aa)b+a(ab+ba))c+ab(ac+ca))/+abc/)d+abc/(ad+da))e+abc/d(ae+ea)
+> (((aa+aa)/+a/)b+a/(ab+ba))c/d+a/b(((ac+ca)/+c/)d+c/(ad+da))
+> ((aa+aa)/+a/)b+a/(ab+ba)+(ac+ca)d+c(ad+da)
+> (a+/**//**)a+/*(aa+aa)
+> (aa+aa)/*+a(a+/**//**)
+> ((a+/**//**)a+/*(aa+aa))/*+/*a(a+/**//**)
+> (a+(/a)**(/a+/(aa+aa))(/a)**)b+(/a)*(ab+ba)
+> a+(a+/*)**(aa+aa+a+/**//**)(a+/*)**
+> a+(/*+a)**(a+/**//**+aa+aa)(/*+a)**
+> a+(/*+/*)**(a+/**//**+a+/**//**)(/*+/*)**
+> a+(ab/c)**((((aa+aa)b+a(ab+ba))/+ab/)c+ab/(ac+ca))(ab/c)**+(aa+aa)b+a(ab+ba)
+> a+((/a)*+c+(d/)*)**(a+(/a)**(/a+/(aa+aa))(/a)**+ac+ca+a+(d/)**((ad+da)/+d/)(d/)**)((/a)*+c+(d/)*)**
+> a+((a/a)*+(b/c)*)**(a+(a/a)**(((aa+aa)/+a/)a+a/(aa+aa))(a/a)**+a+(b/c)**(((ab+ba)/+b/)c+b/(ac+ca))(b/c)**)((a/a)*+(b/c)*)**
+> a+(a/a+/*)**(((aa+aa)/+a/)a+a/(aa+aa)+a+/**//**)(a/a+/*)**
+> a+(/*+/*+/*+/*+/*)**(a+/**//**+a+/**//**+a+/**//**+a+/**//**+a+/**//**)(/*+/*+/*+/*+/*)**
+92c92
+< (((a*aa*+a*(aa+aa)a*)b*+a*(b*ab*+b*(ab+ba)b*))a*+a*b*(a*aa*+a*(aa+aa)a*))c*+a*b*a*(c*ac*+c*(ac+ca)c*)
+---
+> (((a+a**(aa+aa)a**)b*+a*(a+b**(ab+ba)b**))a*+a*b*(a+a**(aa+aa)a**))c*+a*b*a*(a+c**(ac+ca)c**)
+94,96c94,96
+< ((ab)*a(ab)*+(ab)*((aa+aa)b+a(ab+ba))(ab)*)c+(ab)*(ac+ca)
+< ((a+b)*a(a+b)*+(a+b)*(aa+aa+ab+ba)(a+b)*+(a+b)*a)c+(a+b)*(ac+ca)
+< ((aa+b)*a(aa+b)*+(aa+b)*((aa+aa)a+a(aa+aa)+ab+ba)(aa+b)*)c+(aa+b)*(ac+ca)
+---
+> (a+(ab)**((aa+aa)b+a(ab+ba))(ab)**)c+(ab)*(ac+ca)
+> ((a+(a+b)**(aa+aa+ab+ba)(a+b)**)/*+(a+b)*(a+/**//**))c+(a+b)*/*(ac+ca)
+> (a+(aa+b)**((aa+aa)a+a(aa+aa)+ab+ba)(aa+b)**)c+(aa+b)*(ac+ca)
+99,100c99,100
+< (1+2)*a(1+2)*+(1+2)*(a1+1a+a2+2a)(1+2)*
+< (34+567a)*a(34+567a)*+(34+567a)*((a3+3a)4+3(a4+4a)+(((a5+5a)6+5(a6+6a))7+56(a7+7a))a+567(aa+aa))(34+567a)*
+---
+> a+(1+2)**(a1+1a+a2+2a)(1+2)**
+> a+(34+567a)**((a3+3a)4+3(a4+4a)+(((a5+5a)6+5(a6+6a))7+56(a7+7a))a+567(aa+aa))(34+567a)**
+^^^^^
+  Running the command:
+  (./regex_tool --insert b | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/insert-b.txt 2> test-outputs/insert-b-err.txt
+Output base name: insert-b
+    (terminated with zero status (status ignored))
+  test-outputs/insert-b.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/insert-b.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/insert-b.txt
+  OUTCOMES DIFFER:
+vvvvv
+8,28c8,28
+< a*ba*+a*(ba+ab)a*
+< b
+< b+b
+< b+b+b
+< b+b+b
+< b+b+b
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< ((abcd)*b(abcd)*+(abcd)*((((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db))(abcd)*)(cdab)*+(abcd)*((cdab)*b(cdab)*+(cdab)*((((bc+cb)d+c(bd+db))a+cd(ba+ab))b+cda(bb+bb))(cdab)*)
+< (aa)*b(aa)*+(aa)*((ba+ab)a+a(ba+ab))(aa)*+(ba+ab)a*+a(a*ba*+a*(ba+ab)a*)
+< ((ba+ab)b+a(bb+bb))c+ab(bc+cb)+((a*ba*+a*(ba+ab)a*)b*+a*(b*bb*+b*(bb+bb)b*))c*+a*b*(c*bc*+c*(bc+cb)c*)
+< ba+ab+bb+bb+c*bc*+c*(bc+cb)c*+bd+db
+< ((ba+ab+bb+bb+b)(c+/*+d)+(a+b+/*)(bc+cb+b+bd+db))(/*+e+f)+(a+b+/*)(c+/*+d)(b+be+eb+bf+fb)
+< ba+ab+ab+ba+ba+ab
+< (ba+ab)a*+a(a*ba*+a*(ba+ab)a*)+(b*bb*+b*(bb+bb)b*)b+b*(bb+bb)
+---
+> b+a**(ba+ab)a**
+> b+/**//**
+> (b+/**//**)/*+/*(b+/**//**)
+> ((b+/**//**)/*+/*(b+/**//**))/*+/*/*(b+/**//**)
+> (b+/**//**)/*/*+/*((b+/**//**)/*+/*(b+/**//**))
+> ((b+/**//**)/*+/*(b+/**//**))/*+/*/*(b+/**//**)
+> /a+/(ba+ab)
+> (ba+ab)/+a/
+> /+/
+> (b+/**//**)/+/*/
+> //+//
+> (b+(a+b)**(ba+ab+bb+bb)(a+b)**)/+(a+b)*/
+> /(a+b)*+/(b+(a+b)**(ba+ab+bb+bb)(a+b)**)
+> ((b+(abc)**(((ba+ab)b+a(bb+bb))c+ab(bc+cb))(abc)**)/+(abc)*/)(cba)*+(abc)*/(b+(cba)**(((bc+cb)b+c(bb+bb))a+cb(ba+ab))(cba)**)+/(a+b+c)+/(ba+ab+bb+bb+bc+cb)+(b+a**(ba+ab)a**+b+b**(bb+bb)b**+b+c**(bc+cb)c**)/+(a*+b*+c*)/
+> (b+(abcd)**((((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db))(abcd)**)(cdab)*+(abcd)*(b+(cdab)**((((bc+cb)d+c(bd+db))a+cd(ba+ab))b+cda(bb+bb))(cdab)**)
+> b+(aa)**((ba+ab)a+a(ba+ab))(aa)**+(ba+ab)a*+a(b+a**(ba+ab)a**)
+> ((ba+ab)b+a(bb+bb))c+ab(bc+cb)+((b+a**(ba+ab)a**)b*+a*(b+b**(bb+bb)b**))c*+a*b*(b+c**(bc+cb)c**)
+> ba+ab+bb+bb+b+c**(bc+cb)c**+bd+db
+> ((ba+ab+bb+bb+b+/**//**)(c+/*+d)+(a+b+/*)(bc+cb+b+/**//**+bd+db))(/*+e+f)+(a+b+/*)(c+/*+d)(b+/**//**+be+eb+bf+fb)
+> (ba+ab)/*+a(b+/**//**)+(b+/**//**)a+/*(ba+ab)
+> (ba+ab)a*+a(b+a**(ba+ab)a**)+(b+b**(bb+bb)b**)b+b*(bb+bb)
+30c30
+< b+ba+ab
+---
+> b+/**//**+/+/+ba+ab
+32,34c32,34
+< b+b+b+b+b+b+b
+< bc+cb+bd+db
+< ba+ab+(ba+ab)b+a(bb+bb)+((ba+ab)b+a(bb+bb))c+ab(bc+cb)+(((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db)+b
+---
+> b+/********(b+/*******(b+/******(b+/*****(b+/****(b+/***(b+/**//**)/***)/****)/*****)/******)/*******)/********
+> (b+(a+b)**(ba+ab+bb+bb)(a+b)**)/+(a+b)*/+bc+cb+bd+db
+> ba+ab+(ba+ab)b+a(bb+bb)+((ba+ab)b+a(bb+bb))c+ab(bc+cb)+(((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db)+b+/**//**
+36,39c36,39
+< ((ba+ab)b+a(bb+bb))c+ab(bc+cb)+((bb+bb)c+b(bc+cb))d+bc(bd+db)+(abcde)*b(abcde)*+(abcde)*(((((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db))e+abcd(be+eb))(abcde)*
+< ((ba+ab)b*+a(b*bb*+b*(bb+bb)b*))c+ab*(bc+cb)
+< (a*ba*+a*(ba+ab)a*)b+a*(bb+bb)+bc+cb
+< (ba+ab+bb+bb)c+(a+b)(bc+cb)+(bd+db)(a+(bc)*)+d(ba+ab+(bc)*b(bc)*+(bc)*((bb+bb)c+b(bc+cb))(bc)*)
+---
+> ((ba+ab)b+a(bb+bb))c+ab(bc+cb)+((bb+bb)c+b(bc+cb))d+bc(bd+db)+b+(abcde)**(((((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db))e+abcd(be+eb))(abcde)**
+> ((ba+ab)b*+a(b+b**(bb+bb)b**))c+ab*(bc+cb)
+> (b+a**(ba+ab)a**)b+a*(bb+bb)+bc+cb
+> (ba+ab+bb+bb)c+(a+b)(bc+cb)+(bd+db)(a+(bc)*)+d(ba+ab+b+(bc)**((bb+bb)c+b(bc+cb))(bc)**)
+42,49c42,49
+< (ba+ab)b*+a(b*bb*+b*(bb+bb)b*)
+< (a*ba*+a*(ba+ab)a*)b+a*(bb+bb)
+< (ab)*b(ab)*+(ab)*((ba+ab)b+a(bb+bb))(ab)*
+< ba+ab+b*bb*+b*(bb+bb)b*
+< a*ba*+a*(ba+ab)a*+bb+bb
+< (a+b)*b(a+b)*+(a+b)*(ba+ab+bb+bb)(a+b)*
+< ba+ab+bb+bb+bc+cb+bd+db+b
+< (ba+ab)b+a(bb+bb)+(bb+bb)c+b(bc+cb)+(bc+cb)d+c(bd+db)
+---
+> (ba+ab)b*+a(b+b**(bb+bb)b**)
+> (b+a**(ba+ab)a**)b+a*(bb+bb)
+> b+(ab)**((ba+ab)b+a(bb+bb))(ab)**
+> ba+ab+b+b**(bb+bb)b**
+> b+a**(ba+ab)a**+bb+bb
+> b+(a+b)**(ba+ab+bb+bb)(a+b)**
+> ba+ab+bb+bb+bc+cb+bd+db+b+/**//**
+> (ba+ab)b+a(bb+bb)+(bb+bb)c+b(bc+cb)+(bc+cb)d+c(bd+db)+/
+52,66c52,66
+< (cd)*b(cd)*+(cd)*((bc+cb)d+c(bd+db))(cd)*+((a+/*)bc(/*+d))*b((a+/*)bc(/*+d))*+((a+/*)bc(/*+d))*((((ba+ab+b)b+(a+/*)(bb+bb))c+(a+/*)b(bc+cb))(/*+d)+(a+/*)bc(b+bd+db))((a+/*)bc(/*+d))*
+< (((ba+ab+b)(b+/*)+(a+/*)(bb+bb+b))(cd)*+(a+/*)(b+/*)((cd)*b(cd)*+(cd)*((bc+cb)d+c(bd+db))(cd)*))e+(a+/*)(b+/*)(cd)*(be+eb)
+< (ba+ab)(a+b+c+d)*+a((a+b+c+d)*b(a+b+c+d)*+(a+b+c+d)*(ba+ab+bb+bb+bc+cb+bd+db)(a+b+c+d)*)
+< (dc)*b(dc)*+(dc)*((bd+db)c+d(bc+cb))(dc)*+((d+/*)cb(/*+a))*b((d+/*)cb(/*+a))*+((d+/*)cb(/*+a))*((((bd+db+b)c+(d+/*)(bc+cb))b+(d+/*)c(bb+bb))(/*+a)+(d+/*)cb(b+ba+ab))((d+/*)cb(/*+a))*
+< (((be+eb)(dc)*+e((dc)*b(dc)*+(dc)*((bd+db)c+d(bc+cb))(dc)*))(b+/*)+e(dc)*(bb+bb+b))(a+/*)+e(dc)*(b+/*)(ba+ab+b)
+< ((a+b+c+d)*b(a+b+c+d)*+(a+b+c+d)*(ba+ab+bb+bb+bc+cb+bd+db)(a+b+c+d)*)a+(a+b+c+d)*(ba+ab)
+< /
+< ((ba+ba+ab)b+a(bb+bb))c+ab(bc+cb)
+< /
+< ((ba+ab)b+a(bb+bb))c+ab(bc+cb)+abcb
+< (abc)*b(abc)*+(abc)*(((ba+ab)b+a(bb+bb))c+ab(bc+cb))(abc)*
+< ((bb+bb)c+b(bc+cb))(abc)*+bc((abc)*b(abc)*+(abc)*(((ba+ab)b+a(bb+bb))c+ab(bc+cb))(abc)*)
+< (((abc)*b(abc)*+(abc)*(((ba+ab)b+a(bb+bb))c+ab(bc+cb))(abc)*)a+(abc)*(ba+ab))b+(abc)*a(bb+bb)
+< ba+ab+(ba+ab)b+a(bb+bb)+(bb+bb)c+b(bc+cb)+(((bb+bb)a+b(ba+ab))c+ba(bc+cb))a+bac(ba+ab)+(abcd)*b(abcd)*+(abcd)*((((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db))(abcd)*
+< ((caaaa+ab)*b(caaaa+ab)*+(caaaa+ab)*(((((bc+cb)a+c(ba+ab))a+ca(ba+ab))a+caa(ba+ab))a+caaa(ba+ab)+(ba+ab)b+a(bb+bb))(caaaa+ab)*)a+(caaaa+ab)*(ba+ab)+(bb+bb)b+b(bb+bb)
+---
+> b+(cd)**((bc+cb)d+c(bd+db))(cd)**+b+((a+/*)bc(/*+d))**((((ba+ab+b+/**//**)b+(a+/*)(bb+bb))c+(a+/*)b(bc+cb))(/*+d)+(a+/*)bc(b+/**//**+bd+db))((a+/*)bc(/*+d))**
+> (((ba+ab+b+/**//**)(b+/*)+(a+/*)(bb+bb+b+/**//**))(cd)*+(a+/*)(b+/*)(b+(cd)**((bc+cb)d+c(bd+db))(cd)**))e+(a+/*)(b+/*)(cd)*(be+eb)
+> (ba+ab)(a+b+c+d)*+a(b+(a+b+c+d)**(ba+ab+bb+bb+bc+cb+bd+db)(a+b+c+d)**)
+> b+(dc)**((bd+db)c+d(bc+cb))(dc)**+b+((d+/*)cb(/*+a))**((((bd+db+b+/**//**)c+(d+/*)(bc+cb))b+(d+/*)c(bb+bb))(/*+a)+(d+/*)cb(b+/**//**+ba+ab))((d+/*)cb(/*+a))**
+> (((be+eb)(dc)*+e(b+(dc)**((bd+db)c+d(bc+cb))(dc)**))(b+/*)+e(dc)*(bb+bb+b+/**//**))(a+/*)+e(dc)*(b+/*)(ba+ab+b+/**//**)
+> (b+(a+b+c+d)**(ba+ab+bb+bb+bc+cb+bd+db)(a+b+c+d)**)a+(a+b+c+d)*(ba+ab)
+> ((/a+/(ba+ab))b+/a(bb+bb))c+/ab(bc+cb)
+> (((b+/**//**)a+/*(ba+ab))b+/*a(bb+bb))c+/*ab(bc+cb)
+> (((ba+ab)b+a(bb+bb))c+ab(bc+cb))/+abc/
+> (((ba+ab)b+a(bb+bb))c+ab(bc+cb))/*+abc(b+/**//**)
+> b+(abc)**(((ba+ab)b+a(bb+bb))c+ab(bc+cb))(abc)**
+> ((bb+bb)c+b(bc+cb))(abc)*+bc(b+(abc)**(((ba+ab)b+a(bb+bb))c+ab(bc+cb))(abc)**)
+> ((b+(abc)**(((ba+ab)b+a(bb+bb))c+ab(bc+cb))(abc)**)a+(abc)*(ba+ab))b+(abc)*a(bb+bb)
+> ba+ab+(ba+ab)b+a(bb+bb)+(bb+bb)c+b(bc+cb)+(((bb+bb)a+b(ba+ab))c+ba(bc+cb))a+bac(ba+ab)+b+(abcd)**((((ba+ab)b+a(bb+bb))c+ab(bc+cb))d+abc(bd+db))(abcd)**
+> (b+(caaaa+ab)**(((((bc+cb)a+c(ba+ab))a+ca(ba+ab))a+caa(ba+ab))a+caaa(ba+ab)+(ba+ab)b+a(bb+bb))(caaaa+ab)**)a+(caaaa+ab)*(ba+ab)+(bb+bb)b+b(bb+bb)
+68,90c68,90
+< (ab(c+/*))*b(ab(c+/*))*+(ab(c+/*))*(((ba+ab)b+a(bb+bb))(c+/*)+ab(bc+cb+b))(ab(c+/*))*
+< (ab+bc(a+d)*)*b(ab+bc(a+d)*)*+(ab+bc(a+d)*)*((ba+ab)b+a(bb+bb)+((bb+bb)c+b(bc+cb))(a+d)*+bc((a+d)*b(a+d)*+(a+d)*(ba+ab+bd+db)(a+d)*))(ab+bc(a+d)*)*
+< b+b
+< a*ba*+a*(a*ba*+a*(ba+ab)a*)a*
+< a*ba*+a*(a*ba*+a*(a*ba*+a*(a*ba*+a*(a*ba*+a*(ba+ab)a*)a*)a*)a*)a*
+< a*ba*+a*(a*ba*+a*(ba+ab)a*)a*
+< a*ba*+a*(a*ba*+a*(ba+ab)a*)a*
+< /
+< /
+< /
+< (bc+cb)d+c(bd+db)
+< ba+ba+ab
+< ba+ab+ab
+< ba+ba+ab+ab
+< bb+bb+bb
+< a*ba*+a*(ba+ab+b)a*
+< a*ba*+a*(b+ba+ab)a*
+< /**b/**+/**(b+b)/**
+< b+(ba+ab)b+a(bb+bb)
+< (c+/*)*b(c+/*)*+(c+/*)*(b+bc+cb+b)(c+/*)*
+< /**b/**+/**(b+b)/**
+< b+b
+< (/*+/*+/*+/*)*b(/*+/*+/*+/*)*+(/*+/*+/*+/*)*(b+b+b+b+b)(/*+/*+/*+/*)*
+---
+> b+(ab(c+/*))**(((ba+ab)b+a(bb+bb))(c+/*)+ab(bc+cb+b+/**//**))(ab(c+/*))**
+> b+(ab+bc(a+d)*)**((ba+ab)b+a(bb+bb)+((bb+bb)c+b(bc+cb))(a+d)*+bc(b+(a+d)**(ba+ab+bd+db)(a+d)**))(ab+bc(a+d)*)**
+> (b+/**//**)/*+/*(b+/**//**)
+> b+a***(b+a**(ba+ab)a**)a***
+> b+a******(b+a*****(b+a****(b+a***(b+a**(ba+ab)a**)a***)a****)a*****)a******
+> b+a***(b+a**(ba+ab)a**)a***+/
+> /+b+a***(b+a**(ba+ab)a**)a***
+> /(a+bc+def)+/(ba+ab+(bb+bb)c+b(bc+cb)+((bd+db)e+d(be+eb))f+de(bf+fb))
+> (((((ba+ab)b+a(bb+bb))c+ab(bc+cb))/+abc/)d+abc/(bd+db))e+abc/d(be+eb)
+> (((ba+ab)/+a/)b+a/(bb+bb))c/d+a/b(((bc+cb)/+c/)d+c/(bd+db))
+> ((ba+ab)/+a/)b+a/(bb+bb)+(bc+cb)d+c(bd+db)
+> (b+/**//**)a+/*(ba+ab)
+> (ba+ab)/*+a(b+/**//**)
+> ((b+/**//**)a+/*(ba+ab))/*+/*a(b+/**//**)
+> (b+(/a)**(/a+/(ba+ab))(/a)**)b+(/a)*(bb+bb)
+> b+(a+/*)**(ba+ab+b+/**//**)(a+/*)**
+> b+(/*+a)**(b+/**//**+ba+ab)(/*+a)**
+> b+(/*+/*)**(b+/**//**+b+/**//**)(/*+/*)**
+> b+(ab/c)**((((ba+ab)b+a(bb+bb))/+ab/)c+ab/(bc+cb))(ab/c)**+(ba+ab)b+a(bb+bb)
+> b+((/a)*+c+(d/)*)**(b+(/a)**(/a+/(ba+ab))(/a)**+bc+cb+b+(d/)**((bd+db)/+d/)(d/)**)((/a)*+c+(d/)*)**
+> b+((a/a)*+(b/c)*)**(b+(a/a)**(((ba+ab)/+a/)a+a/(ba+ab))(a/a)**+b+(b/c)**(((bb+bb)/+b/)c+b/(bc+cb))(b/c)**)((a/a)*+(b/c)*)**
+> b+(a/a+/*)**(((ba+ab)/+a/)a+a/(ba+ab)+b+/**//**)(a/a+/*)**
+> b+(/*+/*+/*+/*+/*)**(b+/**//**+b+/**//**+b+/**//**+b+/**//**+b+/**//**)(/*+/*+/*+/*+/*)**
+92c92
+< (((a*ba*+a*(ba+ab)a*)b*+a*(b*bb*+b*(bb+bb)b*))a*+a*b*(a*ba*+a*(ba+ab)a*))c*+a*b*a*(c*bc*+c*(bc+cb)c*)
+---
+> (((b+a**(ba+ab)a**)b*+a*(b+b**(bb+bb)b**))a*+a*b*(b+a**(ba+ab)a**))c*+a*b*a*(b+c**(bc+cb)c**)
+94,96c94,96
+< ((ab)*b(ab)*+(ab)*((ba+ab)b+a(bb+bb))(ab)*)c+(ab)*(bc+cb)
+< ((a+b)*b(a+b)*+(a+b)*(ba+ab+bb+bb)(a+b)*+(a+b)*b)c+(a+b)*(bc+cb)
+< ((aa+b)*b(aa+b)*+(aa+b)*((ba+ab)a+a(ba+ab)+bb+bb)(aa+b)*)c+(aa+b)*(bc+cb)
+---
+> (b+(ab)**((ba+ab)b+a(bb+bb))(ab)**)c+(ab)*(bc+cb)
+> ((b+(a+b)**(ba+ab+bb+bb)(a+b)**)/*+(a+b)*(b+/**//**))c+(a+b)*/*(bc+cb)
+> (b+(aa+b)**((ba+ab)a+a(ba+ab)+bb+bb)(aa+b)**)c+(aa+b)*(bc+cb)
+99,100c99,100
+< (1+2)*b(1+2)*+(1+2)*(b1+1b+b2+2b)(1+2)*
+< (34+567a)*b(34+567a)*+(34+567a)*((b3+3b)4+3(b4+4b)+(((b5+5b)6+5(b6+6b))7+56(b7+7b))a+567(ba+ab))(34+567a)*
+---
+> b+(1+2)**(b1+1b+b2+2b)(1+2)**
+> b+(34+567a)**((b3+3b)4+3(b4+4b)+(((b5+5b)6+5(b6+6b))7+56(b7+7b))a+567(ba+ab))(34+567a)**
+^^^^^
+  Running the command:
+  (./regex_tool --insert c | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/insert-c.txt 2> test-outputs/insert-c-err.txt
+Output base name: insert-c
+    (terminated with zero status (status ignored))
+  test-outputs/insert-c.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/insert-c.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/insert-c.txt
+  OUTCOMES DIFFER:
+vvvvv
+8,28c8,28
+< a*ca*+a*(ca+ac)a*
+< c
+< c+c
+< c+c+c
+< c+c+c
+< c+c+c
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< ((abcd)*c(abcd)*+(abcd)*((((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc))(abcd)*)(cdab)*+(abcd)*((cdab)*c(cdab)*+(cdab)*((((cc+cc)d+c(cd+dc))a+cd(ca+ac))b+cda(cb+bc))(cdab)*)
+< (aa)*c(aa)*+(aa)*((ca+ac)a+a(ca+ac))(aa)*+(ca+ac)a*+a(a*ca*+a*(ca+ac)a*)
+< ((ca+ac)b+a(cb+bc))c+ab(cc+cc)+((a*ca*+a*(ca+ac)a*)b*+a*(b*cb*+b*(cb+bc)b*))c*+a*b*(c*cc*+c*(cc+cc)c*)
+< ca+ac+cb+bc+c*cc*+c*(cc+cc)c*+cd+dc
+< ((ca+ac+cb+bc+c)(c+/*+d)+(a+b+/*)(cc+cc+c+cd+dc))(/*+e+f)+(a+b+/*)(c+/*+d)(c+ce+ec+cf+fc)
+< ca+ac+ac+ca+ca+ac
+< (ca+ac)a*+a(a*ca*+a*(ca+ac)a*)+(b*cb*+b*(cb+bc)b*)b+b*(cb+bc)
+---
+> c+a**(ca+ac)a**
+> c+/**//**
+> (c+/**//**)/*+/*(c+/**//**)
+> ((c+/**//**)/*+/*(c+/**//**))/*+/*/*(c+/**//**)
+> (c+/**//**)/*/*+/*((c+/**//**)/*+/*(c+/**//**))
+> ((c+/**//**)/*+/*(c+/**//**))/*+/*/*(c+/**//**)
+> /a+/(ca+ac)
+> (ca+ac)/+a/
+> /+/
+> (c+/**//**)/+/*/
+> //+//
+> (c+(a+b)**(ca+ac+cb+bc)(a+b)**)/+(a+b)*/
+> /(a+b)*+/(c+(a+b)**(ca+ac+cb+bc)(a+b)**)
+> ((c+(abc)**(((ca+ac)b+a(cb+bc))c+ab(cc+cc))(abc)**)/+(abc)*/)(cba)*+(abc)*/(c+(cba)**(((cc+cc)b+c(cb+bc))a+cb(ca+ac))(cba)**)+/(a+b+c)+/(ca+ac+cb+bc+cc+cc)+(c+a**(ca+ac)a**+c+b**(cb+bc)b**+c+c**(cc+cc)c**)/+(a*+b*+c*)/
+> (c+(abcd)**((((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc))(abcd)**)(cdab)*+(abcd)*(c+(cdab)**((((cc+cc)d+c(cd+dc))a+cd(ca+ac))b+cda(cb+bc))(cdab)**)
+> c+(aa)**((ca+ac)a+a(ca+ac))(aa)**+(ca+ac)a*+a(c+a**(ca+ac)a**)
+> ((ca+ac)b+a(cb+bc))c+ab(cc+cc)+((c+a**(ca+ac)a**)b*+a*(c+b**(cb+bc)b**))c*+a*b*(c+c**(cc+cc)c**)
+> ca+ac+cb+bc+c+c**(cc+cc)c**+cd+dc
+> ((ca+ac+cb+bc+c+/**//**)(c+/*+d)+(a+b+/*)(cc+cc+c+/**//**+cd+dc))(/*+e+f)+(a+b+/*)(c+/*+d)(c+/**//**+ce+ec+cf+fc)
+> (ca+ac)/*+a(c+/**//**)+(c+/**//**)a+/*(ca+ac)
+> (ca+ac)a*+a(c+a**(ca+ac)a**)+(c+b**(cb+bc)b**)b+b*(cb+bc)
+30c30
+< c+ca+ac
+---
+> c+/**//**+/+/+ca+ac
+32,34c32,34
+< c+c+c+c+c+c+c
+< cc+cc+cd+dc
+< ca+ac+(ca+ac)b+a(cb+bc)+((ca+ac)b+a(cb+bc))c+ab(cc+cc)+(((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc)+c
+---
+> c+/********(c+/*******(c+/******(c+/*****(c+/****(c+/***(c+/**//**)/***)/****)/*****)/******)/*******)/********
+> (c+(a+b)**(ca+ac+cb+bc)(a+b)**)/+(a+b)*/+cc+cc+cd+dc
+> ca+ac+(ca+ac)b+a(cb+bc)+((ca+ac)b+a(cb+bc))c+ab(cc+cc)+(((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc)+c+/**//**
+36,39c36,39
+< ((ca+ac)b+a(cb+bc))c+ab(cc+cc)+((cb+bc)c+b(cc+cc))d+bc(cd+dc)+(abcde)*c(abcde)*+(abcde)*(((((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc))e+abcd(ce+ec))(abcde)*
+< ((ca+ac)b*+a(b*cb*+b*(cb+bc)b*))c+ab*(cc+cc)
+< (a*ca*+a*(ca+ac)a*)b+a*(cb+bc)+cc+cc
+< (ca+ac+cb+bc)c+(a+b)(cc+cc)+(cd+dc)(a+(bc)*)+d(ca+ac+(bc)*c(bc)*+(bc)*((cb+bc)c+b(cc+cc))(bc)*)
+---
+> ((ca+ac)b+a(cb+bc))c+ab(cc+cc)+((cb+bc)c+b(cc+cc))d+bc(cd+dc)+c+(abcde)**(((((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc))e+abcd(ce+ec))(abcde)**
+> ((ca+ac)b*+a(c+b**(cb+bc)b**))c+ab*(cc+cc)
+> (c+a**(ca+ac)a**)b+a*(cb+bc)+cc+cc
+> (ca+ac+cb+bc)c+(a+b)(cc+cc)+(cd+dc)(a+(bc)*)+d(ca+ac+c+(bc)**((cb+bc)c+b(cc+cc))(bc)**)
+42,49c42,49
+< (ca+ac)b*+a(b*cb*+b*(cb+bc)b*)
+< (a*ca*+a*(ca+ac)a*)b+a*(cb+bc)
+< (ab)*c(ab)*+(ab)*((ca+ac)b+a(cb+bc))(ab)*
+< ca+ac+b*cb*+b*(cb+bc)b*
+< a*ca*+a*(ca+ac)a*+cb+bc
+< (a+b)*c(a+b)*+(a+b)*(ca+ac+cb+bc)(a+b)*
+< ca+ac+cb+bc+cc+cc+cd+dc+c
+< (ca+ac)b+a(cb+bc)+(cb+bc)c+b(cc+cc)+(cc+cc)d+c(cd+dc)
+---
+> (ca+ac)b*+a(c+b**(cb+bc)b**)
+> (c+a**(ca+ac)a**)b+a*(cb+bc)
+> c+(ab)**((ca+ac)b+a(cb+bc))(ab)**
+> ca+ac+c+b**(cb+bc)b**
+> c+a**(ca+ac)a**+cb+bc
+> c+(a+b)**(ca+ac+cb+bc)(a+b)**
+> ca+ac+cb+bc+cc+cc+cd+dc+c+/**//**
+> (ca+ac)b+a(cb+bc)+(cb+bc)c+b(cc+cc)+(cc+cc)d+c(cd+dc)+/
+52,66c52,66
+< (cd)*c(cd)*+(cd)*((cc+cc)d+c(cd+dc))(cd)*+((a+/*)bc(/*+d))*c((a+/*)bc(/*+d))*+((a+/*)bc(/*+d))*((((ca+ac+c)b+(a+/*)(cb+bc))c+(a+/*)b(cc+cc))(/*+d)+(a+/*)bc(c+cd+dc))((a+/*)bc(/*+d))*
+< (((ca+ac+c)(b+/*)+(a+/*)(cb+bc+c))(cd)*+(a+/*)(b+/*)((cd)*c(cd)*+(cd)*((cc+cc)d+c(cd+dc))(cd)*))e+(a+/*)(b+/*)(cd)*(ce+ec)
+< (ca+ac)(a+b+c+d)*+a((a+b+c+d)*c(a+b+c+d)*+(a+b+c+d)*(ca+ac+cb+bc+cc+cc+cd+dc)(a+b+c+d)*)
+< (dc)*c(dc)*+(dc)*((cd+dc)c+d(cc+cc))(dc)*+((d+/*)cb(/*+a))*c((d+/*)cb(/*+a))*+((d+/*)cb(/*+a))*((((cd+dc+c)c+(d+/*)(cc+cc))b+(d+/*)c(cb+bc))(/*+a)+(d+/*)cb(c+ca+ac))((d+/*)cb(/*+a))*
+< (((ce+ec)(dc)*+e((dc)*c(dc)*+(dc)*((cd+dc)c+d(cc+cc))(dc)*))(b+/*)+e(dc)*(cb+bc+c))(a+/*)+e(dc)*(b+/*)(ca+ac+c)
+< ((a+b+c+d)*c(a+b+c+d)*+(a+b+c+d)*(ca+ac+cb+bc+cc+cc+cd+dc)(a+b+c+d)*)a+(a+b+c+d)*(ca+ac)
+< /
+< ((ca+ca+ac)b+a(cb+bc))c+ab(cc+cc)
+< /
+< ((ca+ac)b+a(cb+bc))c+ab(cc+cc)+abcc
+< (abc)*c(abc)*+(abc)*(((ca+ac)b+a(cb+bc))c+ab(cc+cc))(abc)*
+< ((cb+bc)c+b(cc+cc))(abc)*+bc((abc)*c(abc)*+(abc)*(((ca+ac)b+a(cb+bc))c+ab(cc+cc))(abc)*)
+< (((abc)*c(abc)*+(abc)*(((ca+ac)b+a(cb+bc))c+ab(cc+cc))(abc)*)a+(abc)*(ca+ac))b+(abc)*a(cb+bc)
+< ca+ac+(ca+ac)b+a(cb+bc)+(cb+bc)c+b(cc+cc)+(((cb+bc)a+b(ca+ac))c+ba(cc+cc))a+bac(ca+ac)+(abcd)*c(abcd)*+(abcd)*((((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc))(abcd)*
+< ((caaaa+ab)*c(caaaa+ab)*+(caaaa+ab)*(((((cc+cc)a+c(ca+ac))a+ca(ca+ac))a+caa(ca+ac))a+caaa(ca+ac)+(ca+ac)b+a(cb+bc))(caaaa+ab)*)a+(caaaa+ab)*(ca+ac)+(cb+bc)b+b(cb+bc)
+---
+> c+(cd)**((cc+cc)d+c(cd+dc))(cd)**+c+((a+/*)bc(/*+d))**((((ca+ac+c+/**//**)b+(a+/*)(cb+bc))c+(a+/*)b(cc+cc))(/*+d)+(a+/*)bc(c+/**//**+cd+dc))((a+/*)bc(/*+d))**
+> (((ca+ac+c+/**//**)(b+/*)+(a+/*)(cb+bc+c+/**//**))(cd)*+(a+/*)(b+/*)(c+(cd)**((cc+cc)d+c(cd+dc))(cd)**))e+(a+/*)(b+/*)(cd)*(ce+ec)
+> (ca+ac)(a+b+c+d)*+a(c+(a+b+c+d)**(ca+ac+cb+bc+cc+cc+cd+dc)(a+b+c+d)**)
+> c+(dc)**((cd+dc)c+d(cc+cc))(dc)**+c+((d+/*)cb(/*+a))**((((cd+dc+c+/**//**)c+(d+/*)(cc+cc))b+(d+/*)c(cb+bc))(/*+a)+(d+/*)cb(c+/**//**+ca+ac))((d+/*)cb(/*+a))**
+> (((ce+ec)(dc)*+e(c+(dc)**((cd+dc)c+d(cc+cc))(dc)**))(b+/*)+e(dc)*(cb+bc+c+/**//**))(a+/*)+e(dc)*(b+/*)(ca+ac+c+/**//**)
+> (c+(a+b+c+d)**(ca+ac+cb+bc+cc+cc+cd+dc)(a+b+c+d)**)a+(a+b+c+d)*(ca+ac)
+> ((/a+/(ca+ac))b+/a(cb+bc))c+/ab(cc+cc)
+> (((c+/**//**)a+/*(ca+ac))b+/*a(cb+bc))c+/*ab(cc+cc)
+> (((ca+ac)b+a(cb+bc))c+ab(cc+cc))/+abc/
+> (((ca+ac)b+a(cb+bc))c+ab(cc+cc))/*+abc(c+/**//**)
+> c+(abc)**(((ca+ac)b+a(cb+bc))c+ab(cc+cc))(abc)**
+> ((cb+bc)c+b(cc+cc))(abc)*+bc(c+(abc)**(((ca+ac)b+a(cb+bc))c+ab(cc+cc))(abc)**)
+> ((c+(abc)**(((ca+ac)b+a(cb+bc))c+ab(cc+cc))(abc)**)a+(abc)*(ca+ac))b+(abc)*a(cb+bc)
+> ca+ac+(ca+ac)b+a(cb+bc)+(cb+bc)c+b(cc+cc)+(((cb+bc)a+b(ca+ac))c+ba(cc+cc))a+bac(ca+ac)+c+(abcd)**((((ca+ac)b+a(cb+bc))c+ab(cc+cc))d+abc(cd+dc))(abcd)**
+> (c+(caaaa+ab)**(((((cc+cc)a+c(ca+ac))a+ca(ca+ac))a+caa(ca+ac))a+caaa(ca+ac)+(ca+ac)b+a(cb+bc))(caaaa+ab)**)a+(caaaa+ab)*(ca+ac)+(cb+bc)b+b(cb+bc)
+68,90c68,90
+< (ab(c+/*))*c(ab(c+/*))*+(ab(c+/*))*(((ca+ac)b+a(cb+bc))(c+/*)+ab(cc+cc+c))(ab(c+/*))*
+< (ab+bc(a+d)*)*c(ab+bc(a+d)*)*+(ab+bc(a+d)*)*((ca+ac)b+a(cb+bc)+((cb+bc)c+b(cc+cc))(a+d)*+bc((a+d)*c(a+d)*+(a+d)*(ca+ac+cd+dc)(a+d)*))(ab+bc(a+d)*)*
+< c+c
+< a*ca*+a*(a*ca*+a*(ca+ac)a*)a*
+< a*ca*+a*(a*ca*+a*(a*ca*+a*(a*ca*+a*(a*ca*+a*(ca+ac)a*)a*)a*)a*)a*
+< a*ca*+a*(a*ca*+a*(ca+ac)a*)a*
+< a*ca*+a*(a*ca*+a*(ca+ac)a*)a*
+< /
+< /
+< /
+< (cc+cc)d+c(cd+dc)
+< ca+ca+ac
+< ca+ac+ac
+< ca+ca+ac+ac
+< cb+cb+bc
+< a*ca*+a*(ca+ac+c)a*
+< a*ca*+a*(c+ca+ac)a*
+< /**c/**+/**(c+c)/**
+< c+(ca+ac)b+a(cb+bc)
+< (c+/*)*c(c+/*)*+(c+/*)*(c+cc+cc+c)(c+/*)*
+< /**c/**+/**(c+c)/**
+< c+c
+< (/*+/*+/*+/*)*c(/*+/*+/*+/*)*+(/*+/*+/*+/*)*(c+c+c+c+c)(/*+/*+/*+/*)*
+---
+> c+(ab(c+/*))**(((ca+ac)b+a(cb+bc))(c+/*)+ab(cc+cc+c+/**//**))(ab(c+/*))**
+> c+(ab+bc(a+d)*)**((ca+ac)b+a(cb+bc)+((cb+bc)c+b(cc+cc))(a+d)*+bc(c+(a+d)**(ca+ac+cd+dc)(a+d)**))(ab+bc(a+d)*)**
+> (c+/**//**)/*+/*(c+/**//**)
+> c+a***(c+a**(ca+ac)a**)a***
+> c+a******(c+a*****(c+a****(c+a***(c+a**(ca+ac)a**)a***)a****)a*****)a******
+> c+a***(c+a**(ca+ac)a**)a***+/
+> /+c+a***(c+a**(ca+ac)a**)a***
+> /(a+bc+def)+/(ca+ac+(cb+bc)c+b(cc+cc)+((cd+dc)e+d(ce+ec))f+de(cf+fc))
+> (((((ca+ac)b+a(cb+bc))c+ab(cc+cc))/+abc/)d+abc/(cd+dc))e+abc/d(ce+ec)
+> (((ca+ac)/+a/)b+a/(cb+bc))c/d+a/b(((cc+cc)/+c/)d+c/(cd+dc))
+> ((ca+ac)/+a/)b+a/(cb+bc)+(cc+cc)d+c(cd+dc)
+> (c+/**//**)a+/*(ca+ac)
+> (ca+ac)/*+a(c+/**//**)
+> ((c+/**//**)a+/*(ca+ac))/*+/*a(c+/**//**)
+> (c+(/a)**(/a+/(ca+ac))(/a)**)b+(/a)*(cb+bc)
+> c+(a+/*)**(ca+ac+c+/**//**)(a+/*)**
+> c+(/*+a)**(c+/**//**+ca+ac)(/*+a)**
+> c+(/*+/*)**(c+/**//**+c+/**//**)(/*+/*)**
+> c+(ab/c)**((((ca+ac)b+a(cb+bc))/+ab/)c+ab/(cc+cc))(ab/c)**+(ca+ac)b+a(cb+bc)
+> c+((/a)*+c+(d/)*)**(c+(/a)**(/a+/(ca+ac))(/a)**+cc+cc+c+(d/)**((cd+dc)/+d/)(d/)**)((/a)*+c+(d/)*)**
+> c+((a/a)*+(b/c)*)**(c+(a/a)**(((ca+ac)/+a/)a+a/(ca+ac))(a/a)**+c+(b/c)**(((cb+bc)/+b/)c+b/(cc+cc))(b/c)**)((a/a)*+(b/c)*)**
+> c+(a/a+/*)**(((ca+ac)/+a/)a+a/(ca+ac)+c+/**//**)(a/a+/*)**
+> c+(/*+/*+/*+/*+/*)**(c+/**//**+c+/**//**+c+/**//**+c+/**//**+c+/**//**)(/*+/*+/*+/*+/*)**
+92c92
+< (((a*ca*+a*(ca+ac)a*)b*+a*(b*cb*+b*(cb+bc)b*))a*+a*b*(a*ca*+a*(ca+ac)a*))c*+a*b*a*(c*cc*+c*(cc+cc)c*)
+---
+> (((c+a**(ca+ac)a**)b*+a*(c+b**(cb+bc)b**))a*+a*b*(c+a**(ca+ac)a**))c*+a*b*a*(c+c**(cc+cc)c**)
+94,96c94,96
+< ((ab)*c(ab)*+(ab)*((ca+ac)b+a(cb+bc))(ab)*)c+(ab)*(cc+cc)
+< ((a+b)*c(a+b)*+(a+b)*(ca+ac+cb+bc)(a+b)*+(a+b)*c)c+(a+b)*(cc+cc)
+< ((aa+b)*c(aa+b)*+(aa+b)*((ca+ac)a+a(ca+ac)+cb+bc)(aa+b)*)c+(aa+b)*(cc+cc)
+---
+> (c+(ab)**((ca+ac)b+a(cb+bc))(ab)**)c+(ab)*(cc+cc)
+> ((c+(a+b)**(ca+ac+cb+bc)(a+b)**)/*+(a+b)*(c+/**//**))c+(a+b)*/*(cc+cc)
+> (c+(aa+b)**((ca+ac)a+a(ca+ac)+cb+bc)(aa+b)**)c+(aa+b)*(cc+cc)
+99,100c99,100
+< (1+2)*c(1+2)*+(1+2)*(c1+1c+c2+2c)(1+2)*
+< (34+567a)*c(34+567a)*+(34+567a)*((c3+3c)4+3(c4+4c)+(((c5+5c)6+5(c6+6c))7+56(c7+7c))a+567(ca+ac))(34+567a)*
+---
+> c+(1+2)**(c1+1c+c2+2c)(1+2)**
+> c+(34+567a)**((c3+3c)4+3(c4+4c)+(((c5+5c)6+5(c6+6c))7+56(c7+7c))a+567(ca+ac))(34+567a)**
+^^^^^
+  Running the command:
+  (./regex_tool --insert d | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/insert-d.txt 2> test-outputs/insert-d-err.txt
+Output base name: insert-d
+    (terminated with zero status (status ignored))
+  test-outputs/insert-d.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/insert-d.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/insert-d.txt
+  OUTCOMES DIFFER:
+vvvvv
+8,28c8,28
+< a*da*+a*(da+ad)a*
+< d
+< d+d
+< d+d+d
+< d+d+d
+< d+d+d
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< ((abcd)*d(abcd)*+(abcd)*((((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd))(abcd)*)(cdab)*+(abcd)*((cdab)*d(cdab)*+(cdab)*((((dc+cd)d+c(dd+dd))a+cd(da+ad))b+cda(db+bd))(cdab)*)
+< (aa)*d(aa)*+(aa)*((da+ad)a+a(da+ad))(aa)*+(da+ad)a*+a(a*da*+a*(da+ad)a*)
+< ((da+ad)b+a(db+bd))c+ab(dc+cd)+((a*da*+a*(da+ad)a*)b*+a*(b*db*+b*(db+bd)b*))c*+a*b*(c*dc*+c*(dc+cd)c*)
+< da+ad+db+bd+c*dc*+c*(dc+cd)c*+dd+dd
+< ((da+ad+db+bd+d)(c+/*+d)+(a+b+/*)(dc+cd+d+dd+dd))(/*+e+f)+(a+b+/*)(c+/*+d)(d+de+ed+df+fd)
+< da+ad+ad+da+da+ad
+< (da+ad)a*+a(a*da*+a*(da+ad)a*)+(b*db*+b*(db+bd)b*)b+b*(db+bd)
+---
+> d+a**(da+ad)a**
+> d+/**//**
+> (d+/**//**)/*+/*(d+/**//**)
+> ((d+/**//**)/*+/*(d+/**//**))/*+/*/*(d+/**//**)
+> (d+/**//**)/*/*+/*((d+/**//**)/*+/*(d+/**//**))
+> ((d+/**//**)/*+/*(d+/**//**))/*+/*/*(d+/**//**)
+> /a+/(da+ad)
+> (da+ad)/+a/
+> /+/
+> (d+/**//**)/+/*/
+> //+//
+> (d+(a+b)**(da+ad+db+bd)(a+b)**)/+(a+b)*/
+> /(a+b)*+/(d+(a+b)**(da+ad+db+bd)(a+b)**)
+> ((d+(abc)**(((da+ad)b+a(db+bd))c+ab(dc+cd))(abc)**)/+(abc)*/)(cba)*+(abc)*/(d+(cba)**(((dc+cd)b+c(db+bd))a+cb(da+ad))(cba)**)+/(a+b+c)+/(da+ad+db+bd+dc+cd)+(d+a**(da+ad)a**+d+b**(db+bd)b**+d+c**(dc+cd)c**)/+(a*+b*+c*)/
+> (d+(abcd)**((((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd))(abcd)**)(cdab)*+(abcd)*(d+(cdab)**((((dc+cd)d+c(dd+dd))a+cd(da+ad))b+cda(db+bd))(cdab)**)
+> d+(aa)**((da+ad)a+a(da+ad))(aa)**+(da+ad)a*+a(d+a**(da+ad)a**)
+> ((da+ad)b+a(db+bd))c+ab(dc+cd)+((d+a**(da+ad)a**)b*+a*(d+b**(db+bd)b**))c*+a*b*(d+c**(dc+cd)c**)
+> da+ad+db+bd+d+c**(dc+cd)c**+dd+dd
+> ((da+ad+db+bd+d+/**//**)(c+/*+d)+(a+b+/*)(dc+cd+d+/**//**+dd+dd))(/*+e+f)+(a+b+/*)(c+/*+d)(d+/**//**+de+ed+df+fd)
+> (da+ad)/*+a(d+/**//**)+(d+/**//**)a+/*(da+ad)
+> (da+ad)a*+a(d+a**(da+ad)a**)+(d+b**(db+bd)b**)b+b*(db+bd)
+30c30
+< d+da+ad
+---
+> d+/**//**+/+/+da+ad
+32,34c32,34
+< d+d+d+d+d+d+d
+< dc+cd+dd+dd
+< da+ad+(da+ad)b+a(db+bd)+((da+ad)b+a(db+bd))c+ab(dc+cd)+(((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd)+d
+---
+> d+/********(d+/*******(d+/******(d+/*****(d+/****(d+/***(d+/**//**)/***)/****)/*****)/******)/*******)/********
+> (d+(a+b)**(da+ad+db+bd)(a+b)**)/+(a+b)*/+dc+cd+dd+dd
+> da+ad+(da+ad)b+a(db+bd)+((da+ad)b+a(db+bd))c+ab(dc+cd)+(((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd)+d+/**//**
+36,39c36,39
+< ((da+ad)b+a(db+bd))c+ab(dc+cd)+((db+bd)c+b(dc+cd))d+bc(dd+dd)+(abcde)*d(abcde)*+(abcde)*(((((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd))e+abcd(de+ed))(abcde)*
+< ((da+ad)b*+a(b*db*+b*(db+bd)b*))c+ab*(dc+cd)
+< (a*da*+a*(da+ad)a*)b+a*(db+bd)+dc+cd
+< (da+ad+db+bd)c+(a+b)(dc+cd)+(dd+dd)(a+(bc)*)+d(da+ad+(bc)*d(bc)*+(bc)*((db+bd)c+b(dc+cd))(bc)*)
+---
+> ((da+ad)b+a(db+bd))c+ab(dc+cd)+((db+bd)c+b(dc+cd))d+bc(dd+dd)+d+(abcde)**(((((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd))e+abcd(de+ed))(abcde)**
+> ((da+ad)b*+a(d+b**(db+bd)b**))c+ab*(dc+cd)
+> (d+a**(da+ad)a**)b+a*(db+bd)+dc+cd
+> (da+ad+db+bd)c+(a+b)(dc+cd)+(dd+dd)(a+(bc)*)+d(da+ad+d+(bc)**((db+bd)c+b(dc+cd))(bc)**)
+42,49c42,49
+< (da+ad)b*+a(b*db*+b*(db+bd)b*)
+< (a*da*+a*(da+ad)a*)b+a*(db+bd)
+< (ab)*d(ab)*+(ab)*((da+ad)b+a(db+bd))(ab)*
+< da+ad+b*db*+b*(db+bd)b*
+< a*da*+a*(da+ad)a*+db+bd
+< (a+b)*d(a+b)*+(a+b)*(da+ad+db+bd)(a+b)*
+< da+ad+db+bd+dc+cd+dd+dd+d
+< (da+ad)b+a(db+bd)+(db+bd)c+b(dc+cd)+(dc+cd)d+c(dd+dd)
+---
+> (da+ad)b*+a(d+b**(db+bd)b**)
+> (d+a**(da+ad)a**)b+a*(db+bd)
+> d+(ab)**((da+ad)b+a(db+bd))(ab)**
+> da+ad+d+b**(db+bd)b**
+> d+a**(da+ad)a**+db+bd
+> d+(a+b)**(da+ad+db+bd)(a+b)**
+> da+ad+db+bd+dc+cd+dd+dd+d+/**//**
+> (da+ad)b+a(db+bd)+(db+bd)c+b(dc+cd)+(dc+cd)d+c(dd+dd)+/
+52,66c52,66
+< (cd)*d(cd)*+(cd)*((dc+cd)d+c(dd+dd))(cd)*+((a+/*)bc(/*+d))*d((a+/*)bc(/*+d))*+((a+/*)bc(/*+d))*((((da+ad+d)b+(a+/*)(db+bd))c+(a+/*)b(dc+cd))(/*+d)+(a+/*)bc(d+dd+dd))((a+/*)bc(/*+d))*
+< (((da+ad+d)(b+/*)+(a+/*)(db+bd+d))(cd)*+(a+/*)(b+/*)((cd)*d(cd)*+(cd)*((dc+cd)d+c(dd+dd))(cd)*))e+(a+/*)(b+/*)(cd)*(de+ed)
+< (da+ad)(a+b+c+d)*+a((a+b+c+d)*d(a+b+c+d)*+(a+b+c+d)*(da+ad+db+bd+dc+cd+dd+dd)(a+b+c+d)*)
+< (dc)*d(dc)*+(dc)*((dd+dd)c+d(dc+cd))(dc)*+((d+/*)cb(/*+a))*d((d+/*)cb(/*+a))*+((d+/*)cb(/*+a))*((((dd+dd+d)c+(d+/*)(dc+cd))b+(d+/*)c(db+bd))(/*+a)+(d+/*)cb(d+da+ad))((d+/*)cb(/*+a))*
+< (((de+ed)(dc)*+e((dc)*d(dc)*+(dc)*((dd+dd)c+d(dc+cd))(dc)*))(b+/*)+e(dc)*(db+bd+d))(a+/*)+e(dc)*(b+/*)(da+ad+d)
+< ((a+b+c+d)*d(a+b+c+d)*+(a+b+c+d)*(da+ad+db+bd+dc+cd+dd+dd)(a+b+c+d)*)a+(a+b+c+d)*(da+ad)
+< /
+< ((da+da+ad)b+a(db+bd))c+ab(dc+cd)
+< /
+< ((da+ad)b+a(db+bd))c+ab(dc+cd)+abcd
+< (abc)*d(abc)*+(abc)*(((da+ad)b+a(db+bd))c+ab(dc+cd))(abc)*
+< ((db+bd)c+b(dc+cd))(abc)*+bc((abc)*d(abc)*+(abc)*(((da+ad)b+a(db+bd))c+ab(dc+cd))(abc)*)
+< (((abc)*d(abc)*+(abc)*(((da+ad)b+a(db+bd))c+ab(dc+cd))(abc)*)a+(abc)*(da+ad))b+(abc)*a(db+bd)
+< da+ad+(da+ad)b+a(db+bd)+(db+bd)c+b(dc+cd)+(((db+bd)a+b(da+ad))c+ba(dc+cd))a+bac(da+ad)+(abcd)*d(abcd)*+(abcd)*((((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd))(abcd)*
+< ((caaaa+ab)*d(caaaa+ab)*+(caaaa+ab)*(((((dc+cd)a+c(da+ad))a+ca(da+ad))a+caa(da+ad))a+caaa(da+ad)+(da+ad)b+a(db+bd))(caaaa+ab)*)a+(caaaa+ab)*(da+ad)+(db+bd)b+b(db+bd)
+---
+> d+(cd)**((dc+cd)d+c(dd+dd))(cd)**+d+((a+/*)bc(/*+d))**((((da+ad+d+/**//**)b+(a+/*)(db+bd))c+(a+/*)b(dc+cd))(/*+d)+(a+/*)bc(d+/**//**+dd+dd))((a+/*)bc(/*+d))**
+> (((da+ad+d+/**//**)(b+/*)+(a+/*)(db+bd+d+/**//**))(cd)*+(a+/*)(b+/*)(d+(cd)**((dc+cd)d+c(dd+dd))(cd)**))e+(a+/*)(b+/*)(cd)*(de+ed)
+> (da+ad)(a+b+c+d)*+a(d+(a+b+c+d)**(da+ad+db+bd+dc+cd+dd+dd)(a+b+c+d)**)
+> d+(dc)**((dd+dd)c+d(dc+cd))(dc)**+d+((d+/*)cb(/*+a))**((((dd+dd+d+/**//**)c+(d+/*)(dc+cd))b+(d+/*)c(db+bd))(/*+a)+(d+/*)cb(d+/**//**+da+ad))((d+/*)cb(/*+a))**
+> (((de+ed)(dc)*+e(d+(dc)**((dd+dd)c+d(dc+cd))(dc)**))(b+/*)+e(dc)*(db+bd+d+/**//**))(a+/*)+e(dc)*(b+/*)(da+ad+d+/**//**)
+> (d+(a+b+c+d)**(da+ad+db+bd+dc+cd+dd+dd)(a+b+c+d)**)a+(a+b+c+d)*(da+ad)
+> ((/a+/(da+ad))b+/a(db+bd))c+/ab(dc+cd)
+> (((d+/**//**)a+/*(da+ad))b+/*a(db+bd))c+/*ab(dc+cd)
+> (((da+ad)b+a(db+bd))c+ab(dc+cd))/+abc/
+> (((da+ad)b+a(db+bd))c+ab(dc+cd))/*+abc(d+/**//**)
+> d+(abc)**(((da+ad)b+a(db+bd))c+ab(dc+cd))(abc)**
+> ((db+bd)c+b(dc+cd))(abc)*+bc(d+(abc)**(((da+ad)b+a(db+bd))c+ab(dc+cd))(abc)**)
+> ((d+(abc)**(((da+ad)b+a(db+bd))c+ab(dc+cd))(abc)**)a+(abc)*(da+ad))b+(abc)*a(db+bd)
+> da+ad+(da+ad)b+a(db+bd)+(db+bd)c+b(dc+cd)+(((db+bd)a+b(da+ad))c+ba(dc+cd))a+bac(da+ad)+d+(abcd)**((((da+ad)b+a(db+bd))c+ab(dc+cd))d+abc(dd+dd))(abcd)**
+> (d+(caaaa+ab)**(((((dc+cd)a+c(da+ad))a+ca(da+ad))a+caa(da+ad))a+caaa(da+ad)+(da+ad)b+a(db+bd))(caaaa+ab)**)a+(caaaa+ab)*(da+ad)+(db+bd)b+b(db+bd)
+68,90c68,90
+< (ab(c+/*))*d(ab(c+/*))*+(ab(c+/*))*(((da+ad)b+a(db+bd))(c+/*)+ab(dc+cd+d))(ab(c+/*))*
+< (ab+bc(a+d)*)*d(ab+bc(a+d)*)*+(ab+bc(a+d)*)*((da+ad)b+a(db+bd)+((db+bd)c+b(dc+cd))(a+d)*+bc((a+d)*d(a+d)*+(a+d)*(da+ad+dd+dd)(a+d)*))(ab+bc(a+d)*)*
+< d+d
+< a*da*+a*(a*da*+a*(da+ad)a*)a*
+< a*da*+a*(a*da*+a*(a*da*+a*(a*da*+a*(a*da*+a*(da+ad)a*)a*)a*)a*)a*
+< a*da*+a*(a*da*+a*(da+ad)a*)a*
+< a*da*+a*(a*da*+a*(da+ad)a*)a*
+< /
+< /
+< /
+< (dc+cd)d+c(dd+dd)
+< da+da+ad
+< da+ad+ad
+< da+da+ad+ad
+< db+db+bd
+< a*da*+a*(da+ad+d)a*
+< a*da*+a*(d+da+ad)a*
+< /**d/**+/**(d+d)/**
+< d+(da+ad)b+a(db+bd)
+< (c+/*)*d(c+/*)*+(c+/*)*(d+dc+cd+d)(c+/*)*
+< /**d/**+/**(d+d)/**
+< d+d
+< (/*+/*+/*+/*)*d(/*+/*+/*+/*)*+(/*+/*+/*+/*)*(d+d+d+d+d)(/*+/*+/*+/*)*
+---
+> d+(ab(c+/*))**(((da+ad)b+a(db+bd))(c+/*)+ab(dc+cd+d+/**//**))(ab(c+/*))**
+> d+(ab+bc(a+d)*)**((da+ad)b+a(db+bd)+((db+bd)c+b(dc+cd))(a+d)*+bc(d+(a+d)**(da+ad+dd+dd)(a+d)**))(ab+bc(a+d)*)**
+> (d+/**//**)/*+/*(d+/**//**)
+> d+a***(d+a**(da+ad)a**)a***
+> d+a******(d+a*****(d+a****(d+a***(d+a**(da+ad)a**)a***)a****)a*****)a******
+> d+a***(d+a**(da+ad)a**)a***+/
+> /+d+a***(d+a**(da+ad)a**)a***
+> /(a+bc+def)+/(da+ad+(db+bd)c+b(dc+cd)+((dd+dd)e+d(de+ed))f+de(df+fd))
+> (((((da+ad)b+a(db+bd))c+ab(dc+cd))/+abc/)d+abc/(dd+dd))e+abc/d(de+ed)
+> (((da+ad)/+a/)b+a/(db+bd))c/d+a/b(((dc+cd)/+c/)d+c/(dd+dd))
+> ((da+ad)/+a/)b+a/(db+bd)+(dc+cd)d+c(dd+dd)
+> (d+/**//**)a+/*(da+ad)
+> (da+ad)/*+a(d+/**//**)
+> ((d+/**//**)a+/*(da+ad))/*+/*a(d+/**//**)
+> (d+(/a)**(/a+/(da+ad))(/a)**)b+(/a)*(db+bd)
+> d+(a+/*)**(da+ad+d+/**//**)(a+/*)**
+> d+(/*+a)**(d+/**//**+da+ad)(/*+a)**
+> d+(/*+/*)**(d+/**//**+d+/**//**)(/*+/*)**
+> d+(ab/c)**((((da+ad)b+a(db+bd))/+ab/)c+ab/(dc+cd))(ab/c)**+(da+ad)b+a(db+bd)
+> d+((/a)*+c+(d/)*)**(d+(/a)**(/a+/(da+ad))(/a)**+dc+cd+d+(d/)**((dd+dd)/+d/)(d/)**)((/a)*+c+(d/)*)**
+> d+((a/a)*+(b/c)*)**(d+(a/a)**(((da+ad)/+a/)a+a/(da+ad))(a/a)**+d+(b/c)**(((db+bd)/+b/)c+b/(dc+cd))(b/c)**)((a/a)*+(b/c)*)**
+> d+(a/a+/*)**(((da+ad)/+a/)a+a/(da+ad)+d+/**//**)(a/a+/*)**
+> d+(/*+/*+/*+/*+/*)**(d+/**//**+d+/**//**+d+/**//**+d+/**//**+d+/**//**)(/*+/*+/*+/*+/*)**
+92c92
+< (((a*da*+a*(da+ad)a*)b*+a*(b*db*+b*(db+bd)b*))a*+a*b*(a*da*+a*(da+ad)a*))c*+a*b*a*(c*dc*+c*(dc+cd)c*)
+---
+> (((d+a**(da+ad)a**)b*+a*(d+b**(db+bd)b**))a*+a*b*(d+a**(da+ad)a**))c*+a*b*a*(d+c**(dc+cd)c**)
+94,96c94,96
+< ((ab)*d(ab)*+(ab)*((da+ad)b+a(db+bd))(ab)*)c+(ab)*(dc+cd)
+< ((a+b)*d(a+b)*+(a+b)*(da+ad+db+bd)(a+b)*+(a+b)*d)c+(a+b)*(dc+cd)
+< ((aa+b)*d(aa+b)*+(aa+b)*((da+ad)a+a(da+ad)+db+bd)(aa+b)*)c+(aa+b)*(dc+cd)
+---
+> (d+(ab)**((da+ad)b+a(db+bd))(ab)**)c+(ab)*(dc+cd)
+> ((d+(a+b)**(da+ad+db+bd)(a+b)**)/*+(a+b)*(d+/**//**))c+(a+b)*/*(dc+cd)
+> (d+(aa+b)**((da+ad)a+a(da+ad)+db+bd)(aa+b)**)c+(aa+b)*(dc+cd)
+99,100c99,100
+< (1+2)*d(1+2)*+(1+2)*(d1+1d+d2+2d)(1+2)*
+< (34+567a)*d(34+567a)*+(34+567a)*((d3+3d)4+3(d4+4d)+(((d5+5d)6+5(d6+6d))7+56(d7+7d))a+567(da+ad))(34+567a)*
+---
+> d+(1+2)**(d1+1d+d2+2d)(1+2)**
+> d+(34+567a)**((d3+3d)4+3(d4+4d)+(((d5+5d)6+5(d6+6d))7+56(d7+7d))a+567(da+ad))(34+567a)**
+^^^^^
+  Running the command:
+  (./regex_tool --insert e | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/insert-e.txt 2> test-outputs/insert-e-err.txt
+Output base name: insert-e
+    (terminated with zero status (status ignored))
+  test-outputs/insert-e.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/insert-e.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/insert-e.txt
+  OUTCOMES DIFFER:
+vvvvv
+8,28c8,28
+< a*ea*+a*(ea+ae)a*
+< e
+< e+e
+< e+e+e
+< e+e+e
+< e+e+e
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< ((abcd)*e(abcd)*+(abcd)*((((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de))(abcd)*)(cdab)*+(abcd)*((cdab)*e(cdab)*+(cdab)*((((ec+ce)d+c(ed+de))a+cd(ea+ae))b+cda(eb+be))(cdab)*)
+< (aa)*e(aa)*+(aa)*((ea+ae)a+a(ea+ae))(aa)*+(ea+ae)a*+a(a*ea*+a*(ea+ae)a*)
+< ((ea+ae)b+a(eb+be))c+ab(ec+ce)+((a*ea*+a*(ea+ae)a*)b*+a*(b*eb*+b*(eb+be)b*))c*+a*b*(c*ec*+c*(ec+ce)c*)
+< ea+ae+eb+be+c*ec*+c*(ec+ce)c*+ed+de
+< ((ea+ae+eb+be+e)(c+/*+d)+(a+b+/*)(ec+ce+e+ed+de))(/*+e+f)+(a+b+/*)(c+/*+d)(e+ee+ee+ef+fe)
+< ea+ae+ae+ea+ea+ae
+< (ea+ae)a*+a(a*ea*+a*(ea+ae)a*)+(b*eb*+b*(eb+be)b*)b+b*(eb+be)
+---
+> e+a**(ea+ae)a**
+> e+/**//**
+> (e+/**//**)/*+/*(e+/**//**)
+> ((e+/**//**)/*+/*(e+/**//**))/*+/*/*(e+/**//**)
+> (e+/**//**)/*/*+/*((e+/**//**)/*+/*(e+/**//**))
+> ((e+/**//**)/*+/*(e+/**//**))/*+/*/*(e+/**//**)
+> /a+/(ea+ae)
+> (ea+ae)/+a/
+> /+/
+> (e+/**//**)/+/*/
+> //+//
+> (e+(a+b)**(ea+ae+eb+be)(a+b)**)/+(a+b)*/
+> /(a+b)*+/(e+(a+b)**(ea+ae+eb+be)(a+b)**)
+> ((e+(abc)**(((ea+ae)b+a(eb+be))c+ab(ec+ce))(abc)**)/+(abc)*/)(cba)*+(abc)*/(e+(cba)**(((ec+ce)b+c(eb+be))a+cb(ea+ae))(cba)**)+/(a+b+c)+/(ea+ae+eb+be+ec+ce)+(e+a**(ea+ae)a**+e+b**(eb+be)b**+e+c**(ec+ce)c**)/+(a*+b*+c*)/
+> (e+(abcd)**((((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de))(abcd)**)(cdab)*+(abcd)*(e+(cdab)**((((ec+ce)d+c(ed+de))a+cd(ea+ae))b+cda(eb+be))(cdab)**)
+> e+(aa)**((ea+ae)a+a(ea+ae))(aa)**+(ea+ae)a*+a(e+a**(ea+ae)a**)
+> ((ea+ae)b+a(eb+be))c+ab(ec+ce)+((e+a**(ea+ae)a**)b*+a*(e+b**(eb+be)b**))c*+a*b*(e+c**(ec+ce)c**)
+> ea+ae+eb+be+e+c**(ec+ce)c**+ed+de
+> ((ea+ae+eb+be+e+/**//**)(c+/*+d)+(a+b+/*)(ec+ce+e+/**//**+ed+de))(/*+e+f)+(a+b+/*)(c+/*+d)(e+/**//**+ee+ee+ef+fe)
+> (ea+ae)/*+a(e+/**//**)+(e+/**//**)a+/*(ea+ae)
+> (ea+ae)a*+a(e+a**(ea+ae)a**)+(e+b**(eb+be)b**)b+b*(eb+be)
+30c30
+< e+ea+ae
+---
+> e+/**//**+/+/+ea+ae
+32,34c32,34
+< e+e+e+e+e+e+e
+< ec+ce+ed+de
+< ea+ae+(ea+ae)b+a(eb+be)+((ea+ae)b+a(eb+be))c+ab(ec+ce)+(((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de)+e
+---
+> e+/********(e+/*******(e+/******(e+/*****(e+/****(e+/***(e+/**//**)/***)/****)/*****)/******)/*******)/********
+> (e+(a+b)**(ea+ae+eb+be)(a+b)**)/+(a+b)*/+ec+ce+ed+de
+> ea+ae+(ea+ae)b+a(eb+be)+((ea+ae)b+a(eb+be))c+ab(ec+ce)+(((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de)+e+/**//**
+36,39c36,39
+< ((ea+ae)b+a(eb+be))c+ab(ec+ce)+((eb+be)c+b(ec+ce))d+bc(ed+de)+(abcde)*e(abcde)*+(abcde)*(((((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de))e+abcd(ee+ee))(abcde)*
+< ((ea+ae)b*+a(b*eb*+b*(eb+be)b*))c+ab*(ec+ce)
+< (a*ea*+a*(ea+ae)a*)b+a*(eb+be)+ec+ce
+< (ea+ae+eb+be)c+(a+b)(ec+ce)+(ed+de)(a+(bc)*)+d(ea+ae+(bc)*e(bc)*+(bc)*((eb+be)c+b(ec+ce))(bc)*)
+---
+> ((ea+ae)b+a(eb+be))c+ab(ec+ce)+((eb+be)c+b(ec+ce))d+bc(ed+de)+e+(abcde)**(((((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de))e+abcd(ee+ee))(abcde)**
+> ((ea+ae)b*+a(e+b**(eb+be)b**))c+ab*(ec+ce)
+> (e+a**(ea+ae)a**)b+a*(eb+be)+ec+ce
+> (ea+ae+eb+be)c+(a+b)(ec+ce)+(ed+de)(a+(bc)*)+d(ea+ae+e+(bc)**((eb+be)c+b(ec+ce))(bc)**)
+42,49c42,49
+< (ea+ae)b*+a(b*eb*+b*(eb+be)b*)
+< (a*ea*+a*(ea+ae)a*)b+a*(eb+be)
+< (ab)*e(ab)*+(ab)*((ea+ae)b+a(eb+be))(ab)*
+< ea+ae+b*eb*+b*(eb+be)b*
+< a*ea*+a*(ea+ae)a*+eb+be
+< (a+b)*e(a+b)*+(a+b)*(ea+ae+eb+be)(a+b)*
+< ea+ae+eb+be+ec+ce+ed+de+e
+< (ea+ae)b+a(eb+be)+(eb+be)c+b(ec+ce)+(ec+ce)d+c(ed+de)
+---
+> (ea+ae)b*+a(e+b**(eb+be)b**)
+> (e+a**(ea+ae)a**)b+a*(eb+be)
+> e+(ab)**((ea+ae)b+a(eb+be))(ab)**
+> ea+ae+e+b**(eb+be)b**
+> e+a**(ea+ae)a**+eb+be
+> e+(a+b)**(ea+ae+eb+be)(a+b)**
+> ea+ae+eb+be+ec+ce+ed+de+e+/**//**
+> (ea+ae)b+a(eb+be)+(eb+be)c+b(ec+ce)+(ec+ce)d+c(ed+de)+/
+52,66c52,66
+< (cd)*e(cd)*+(cd)*((ec+ce)d+c(ed+de))(cd)*+((a+/*)bc(/*+d))*e((a+/*)bc(/*+d))*+((a+/*)bc(/*+d))*((((ea+ae+e)b+(a+/*)(eb+be))c+(a+/*)b(ec+ce))(/*+d)+(a+/*)bc(e+ed+de))((a+/*)bc(/*+d))*
+< (((ea+ae+e)(b+/*)+(a+/*)(eb+be+e))(cd)*+(a+/*)(b+/*)((cd)*e(cd)*+(cd)*((ec+ce)d+c(ed+de))(cd)*))e+(a+/*)(b+/*)(cd)*(ee+ee)
+< (ea+ae)(a+b+c+d)*+a((a+b+c+d)*e(a+b+c+d)*+(a+b+c+d)*(ea+ae+eb+be+ec+ce+ed+de)(a+b+c+d)*)
+< (dc)*e(dc)*+(dc)*((ed+de)c+d(ec+ce))(dc)*+((d+/*)cb(/*+a))*e((d+/*)cb(/*+a))*+((d+/*)cb(/*+a))*((((ed+de+e)c+(d+/*)(ec+ce))b+(d+/*)c(eb+be))(/*+a)+(d+/*)cb(e+ea+ae))((d+/*)cb(/*+a))*
+< (((ee+ee)(dc)*+e((dc)*e(dc)*+(dc)*((ed+de)c+d(ec+ce))(dc)*))(b+/*)+e(dc)*(eb+be+e))(a+/*)+e(dc)*(b+/*)(ea+ae+e)
+< ((a+b+c+d)*e(a+b+c+d)*+(a+b+c+d)*(ea+ae+eb+be+ec+ce+ed+de)(a+b+c+d)*)a+(a+b+c+d)*(ea+ae)
+< /
+< ((ea+ea+ae)b+a(eb+be))c+ab(ec+ce)
+< /
+< ((ea+ae)b+a(eb+be))c+ab(ec+ce)+abce
+< (abc)*e(abc)*+(abc)*(((ea+ae)b+a(eb+be))c+ab(ec+ce))(abc)*
+< ((eb+be)c+b(ec+ce))(abc)*+bc((abc)*e(abc)*+(abc)*(((ea+ae)b+a(eb+be))c+ab(ec+ce))(abc)*)
+< (((abc)*e(abc)*+(abc)*(((ea+ae)b+a(eb+be))c+ab(ec+ce))(abc)*)a+(abc)*(ea+ae))b+(abc)*a(eb+be)
+< ea+ae+(ea+ae)b+a(eb+be)+(eb+be)c+b(ec+ce)+(((eb+be)a+b(ea+ae))c+ba(ec+ce))a+bac(ea+ae)+(abcd)*e(abcd)*+(abcd)*((((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de))(abcd)*
+< ((caaaa+ab)*e(caaaa+ab)*+(caaaa+ab)*(((((ec+ce)a+c(ea+ae))a+ca(ea+ae))a+caa(ea+ae))a+caaa(ea+ae)+(ea+ae)b+a(eb+be))(caaaa+ab)*)a+(caaaa+ab)*(ea+ae)+(eb+be)b+b(eb+be)
+---
+> e+(cd)**((ec+ce)d+c(ed+de))(cd)**+e+((a+/*)bc(/*+d))**((((ea+ae+e+/**//**)b+(a+/*)(eb+be))c+(a+/*)b(ec+ce))(/*+d)+(a+/*)bc(e+/**//**+ed+de))((a+/*)bc(/*+d))**
+> (((ea+ae+e+/**//**)(b+/*)+(a+/*)(eb+be+e+/**//**))(cd)*+(a+/*)(b+/*)(e+(cd)**((ec+ce)d+c(ed+de))(cd)**))e+(a+/*)(b+/*)(cd)*(ee+ee)
+> (ea+ae)(a+b+c+d)*+a(e+(a+b+c+d)**(ea+ae+eb+be+ec+ce+ed+de)(a+b+c+d)**)
+> e+(dc)**((ed+de)c+d(ec+ce))(dc)**+e+((d+/*)cb(/*+a))**((((ed+de+e+/**//**)c+(d+/*)(ec+ce))b+(d+/*)c(eb+be))(/*+a)+(d+/*)cb(e+/**//**+ea+ae))((d+/*)cb(/*+a))**
+> (((ee+ee)(dc)*+e(e+(dc)**((ed+de)c+d(ec+ce))(dc)**))(b+/*)+e(dc)*(eb+be+e+/**//**))(a+/*)+e(dc)*(b+/*)(ea+ae+e+/**//**)
+> (e+(a+b+c+d)**(ea+ae+eb+be+ec+ce+ed+de)(a+b+c+d)**)a+(a+b+c+d)*(ea+ae)
+> ((/a+/(ea+ae))b+/a(eb+be))c+/ab(ec+ce)
+> (((e+/**//**)a+/*(ea+ae))b+/*a(eb+be))c+/*ab(ec+ce)
+> (((ea+ae)b+a(eb+be))c+ab(ec+ce))/+abc/
+> (((ea+ae)b+a(eb+be))c+ab(ec+ce))/*+abc(e+/**//**)
+> e+(abc)**(((ea+ae)b+a(eb+be))c+ab(ec+ce))(abc)**
+> ((eb+be)c+b(ec+ce))(abc)*+bc(e+(abc)**(((ea+ae)b+a(eb+be))c+ab(ec+ce))(abc)**)
+> ((e+(abc)**(((ea+ae)b+a(eb+be))c+ab(ec+ce))(abc)**)a+(abc)*(ea+ae))b+(abc)*a(eb+be)
+> ea+ae+(ea+ae)b+a(eb+be)+(eb+be)c+b(ec+ce)+(((eb+be)a+b(ea+ae))c+ba(ec+ce))a+bac(ea+ae)+e+(abcd)**((((ea+ae)b+a(eb+be))c+ab(ec+ce))d+abc(ed+de))(abcd)**
+> (e+(caaaa+ab)**(((((ec+ce)a+c(ea+ae))a+ca(ea+ae))a+caa(ea+ae))a+caaa(ea+ae)+(ea+ae)b+a(eb+be))(caaaa+ab)**)a+(caaaa+ab)*(ea+ae)+(eb+be)b+b(eb+be)
+68,90c68,90
+< (ab(c+/*))*e(ab(c+/*))*+(ab(c+/*))*(((ea+ae)b+a(eb+be))(c+/*)+ab(ec+ce+e))(ab(c+/*))*
+< (ab+bc(a+d)*)*e(ab+bc(a+d)*)*+(ab+bc(a+d)*)*((ea+ae)b+a(eb+be)+((eb+be)c+b(ec+ce))(a+d)*+bc((a+d)*e(a+d)*+(a+d)*(ea+ae+ed+de)(a+d)*))(ab+bc(a+d)*)*
+< e+e
+< a*ea*+a*(a*ea*+a*(ea+ae)a*)a*
+< a*ea*+a*(a*ea*+a*(a*ea*+a*(a*ea*+a*(a*ea*+a*(ea+ae)a*)a*)a*)a*)a*
+< a*ea*+a*(a*ea*+a*(ea+ae)a*)a*
+< a*ea*+a*(a*ea*+a*(ea+ae)a*)a*
+< /
+< /
+< /
+< (ec+ce)d+c(ed+de)
+< ea+ea+ae
+< ea+ae+ae
+< ea+ea+ae+ae
+< eb+eb+be
+< a*ea*+a*(ea+ae+e)a*
+< a*ea*+a*(e+ea+ae)a*
+< /**e/**+/**(e+e)/**
+< e+(ea+ae)b+a(eb+be)
+< (c+/*)*e(c+/*)*+(c+/*)*(e+ec+ce+e)(c+/*)*
+< /**e/**+/**(e+e)/**
+< e+e
+< (/*+/*+/*+/*)*e(/*+/*+/*+/*)*+(/*+/*+/*+/*)*(e+e+e+e+e)(/*+/*+/*+/*)*
+---
+> e+(ab(c+/*))**(((ea+ae)b+a(eb+be))(c+/*)+ab(ec+ce+e+/**//**))(ab(c+/*))**
+> e+(ab+bc(a+d)*)**((ea+ae)b+a(eb+be)+((eb+be)c+b(ec+ce))(a+d)*+bc(e+(a+d)**(ea+ae+ed+de)(a+d)**))(ab+bc(a+d)*)**
+> (e+/**//**)/*+/*(e+/**//**)
+> e+a***(e+a**(ea+ae)a**)a***
+> e+a******(e+a*****(e+a****(e+a***(e+a**(ea+ae)a**)a***)a****)a*****)a******
+> e+a***(e+a**(ea+ae)a**)a***+/
+> /+e+a***(e+a**(ea+ae)a**)a***
+> /(a+bc+def)+/(ea+ae+(eb+be)c+b(ec+ce)+((ed+de)e+d(ee+ee))f+de(ef+fe))
+> (((((ea+ae)b+a(eb+be))c+ab(ec+ce))/+abc/)d+abc/(ed+de))e+abc/d(ee+ee)
+> (((ea+ae)/+a/)b+a/(eb+be))c/d+a/b(((ec+ce)/+c/)d+c/(ed+de))
+> ((ea+ae)/+a/)b+a/(eb+be)+(ec+ce)d+c(ed+de)
+> (e+/**//**)a+/*(ea+ae)
+> (ea+ae)/*+a(e+/**//**)
+> ((e+/**//**)a+/*(ea+ae))/*+/*a(e+/**//**)
+> (e+(/a)**(/a+/(ea+ae))(/a)**)b+(/a)*(eb+be)
+> e+(a+/*)**(ea+ae+e+/**//**)(a+/*)**
+> e+(/*+a)**(e+/**//**+ea+ae)(/*+a)**
+> e+(/*+/*)**(e+/**//**+e+/**//**)(/*+/*)**
+> e+(ab/c)**((((ea+ae)b+a(eb+be))/+ab/)c+ab/(ec+ce))(ab/c)**+(ea+ae)b+a(eb+be)
+> e+((/a)*+c+(d/)*)**(e+(/a)**(/a+/(ea+ae))(/a)**+ec+ce+e+(d/)**((ed+de)/+d/)(d/)**)((/a)*+c+(d/)*)**
+> e+((a/a)*+(b/c)*)**(e+(a/a)**(((ea+ae)/+a/)a+a/(ea+ae))(a/a)**+e+(b/c)**(((eb+be)/+b/)c+b/(ec+ce))(b/c)**)((a/a)*+(b/c)*)**
+> e+(a/a+/*)**(((ea+ae)/+a/)a+a/(ea+ae)+e+/**//**)(a/a+/*)**
+> e+(/*+/*+/*+/*+/*)**(e+/**//**+e+/**//**+e+/**//**+e+/**//**+e+/**//**)(/*+/*+/*+/*+/*)**
+92c92
+< (((a*ea*+a*(ea+ae)a*)b*+a*(b*eb*+b*(eb+be)b*))a*+a*b*(a*ea*+a*(ea+ae)a*))c*+a*b*a*(c*ec*+c*(ec+ce)c*)
+---
+> (((e+a**(ea+ae)a**)b*+a*(e+b**(eb+be)b**))a*+a*b*(e+a**(ea+ae)a**))c*+a*b*a*(e+c**(ec+ce)c**)
+94,96c94,96
+< ((ab)*e(ab)*+(ab)*((ea+ae)b+a(eb+be))(ab)*)c+(ab)*(ec+ce)
+< ((a+b)*e(a+b)*+(a+b)*(ea+ae+eb+be)(a+b)*+(a+b)*e)c+(a+b)*(ec+ce)
+< ((aa+b)*e(aa+b)*+(aa+b)*((ea+ae)a+a(ea+ae)+eb+be)(aa+b)*)c+(aa+b)*(ec+ce)
+---
+> (e+(ab)**((ea+ae)b+a(eb+be))(ab)**)c+(ab)*(ec+ce)
+> ((e+(a+b)**(ea+ae+eb+be)(a+b)**)/*+(a+b)*(e+/**//**))c+(a+b)*/*(ec+ce)
+> (e+(aa+b)**((ea+ae)a+a(ea+ae)+eb+be)(aa+b)**)c+(aa+b)*(ec+ce)
+99,100c99,100
+< (1+2)*e(1+2)*+(1+2)*(e1+1e+e2+2e)(1+2)*
+< (34+567a)*e(34+567a)*+(34+567a)*((e3+3e)4+3(e4+4e)+(((e5+5e)6+5(e6+6e))7+56(e7+7e))a+567(ea+ae))(34+567a)*
+---
+> e+(1+2)**(e1+1e+e2+2e)(1+2)**
+> e+(34+567a)**((e3+3e)4+3(e4+4e)+(((e5+5e)6+5(e6+6e))7+56(e7+7e))a+567(ea+ae))(34+567a)**
+^^^^^
+  Running the command:
+  (./regex_tool --insert f | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/insert-f.txt 2> test-outputs/insert-f-err.txt
+Output base name: insert-f
+    (terminated with zero status (status ignored))
+  test-outputs/insert-f.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/insert-f.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/insert-f.txt
+  OUTCOMES DIFFER:
+vvvvv
+8,28c8,28
+< a*fa*+a*(fa+af)a*
+< f
+< f+f
+< f+f+f
+< f+f+f
+< f+f+f
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< /
+< ((abcd)*f(abcd)*+(abcd)*((((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df))(abcd)*)(cdab)*+(abcd)*((cdab)*f(cdab)*+(cdab)*((((fc+cf)d+c(fd+df))a+cd(fa+af))b+cda(fb+bf))(cdab)*)
+< (aa)*f(aa)*+(aa)*((fa+af)a+a(fa+af))(aa)*+(fa+af)a*+a(a*fa*+a*(fa+af)a*)
+< ((fa+af)b+a(fb+bf))c+ab(fc+cf)+((a*fa*+a*(fa+af)a*)b*+a*(b*fb*+b*(fb+bf)b*))c*+a*b*(c*fc*+c*(fc+cf)c*)
+< fa+af+fb+bf+c*fc*+c*(fc+cf)c*+fd+df
+< ((fa+af+fb+bf+f)(c+/*+d)+(a+b+/*)(fc+cf+f+fd+df))(/*+e+f)+(a+b+/*)(c+/*+d)(f+fe+ef+ff+ff)
+< fa+af+af+fa+fa+af
+< (fa+af)a*+a(a*fa*+a*(fa+af)a*)+(b*fb*+b*(fb+bf)b*)b+b*(fb+bf)
+---
+> f+a**(fa+af)a**
+> f+/**//**
+> (f+/**//**)/*+/*(f+/**//**)
+> ((f+/**//**)/*+/*(f+/**//**))/*+/*/*(f+/**//**)
+> (f+/**//**)/*/*+/*((f+/**//**)/*+/*(f+/**//**))
+> ((f+/**//**)/*+/*(f+/**//**))/*+/*/*(f+/**//**)
+> /a+/(fa+af)
+> (fa+af)/+a/
+> /+/
+> (f+/**//**)/+/*/
+> //+//
+> (f+(a+b)**(fa+af+fb+bf)(a+b)**)/+(a+b)*/
+> /(a+b)*+/(f+(a+b)**(fa+af+fb+bf)(a+b)**)
+> ((f+(abc)**(((fa+af)b+a(fb+bf))c+ab(fc+cf))(abc)**)/+(abc)*/)(cba)*+(abc)*/(f+(cba)**(((fc+cf)b+c(fb+bf))a+cb(fa+af))(cba)**)+/(a+b+c)+/(fa+af+fb+bf+fc+cf)+(f+a**(fa+af)a**+f+b**(fb+bf)b**+f+c**(fc+cf)c**)/+(a*+b*+c*)/
+> (f+(abcd)**((((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df))(abcd)**)(cdab)*+(abcd)*(f+(cdab)**((((fc+cf)d+c(fd+df))a+cd(fa+af))b+cda(fb+bf))(cdab)**)
+> f+(aa)**((fa+af)a+a(fa+af))(aa)**+(fa+af)a*+a(f+a**(fa+af)a**)
+> ((fa+af)b+a(fb+bf))c+ab(fc+cf)+((f+a**(fa+af)a**)b*+a*(f+b**(fb+bf)b**))c*+a*b*(f+c**(fc+cf)c**)
+> fa+af+fb+bf+f+c**(fc+cf)c**+fd+df
+> ((fa+af+fb+bf+f+/**//**)(c+/*+d)+(a+b+/*)(fc+cf+f+/**//**+fd+df))(/*+e+f)+(a+b+/*)(c+/*+d)(f+/**//**+fe+ef+ff+ff)
+> (fa+af)/*+a(f+/**//**)+(f+/**//**)a+/*(fa+af)
+> (fa+af)a*+a(f+a**(fa+af)a**)+(f+b**(fb+bf)b**)b+b*(fb+bf)
+30c30
+< f+fa+af
+---
+> f+/**//**+/+/+fa+af
+32,34c32,34
+< f+f+f+f+f+f+f
+< fc+cf+fd+df
+< fa+af+(fa+af)b+a(fb+bf)+((fa+af)b+a(fb+bf))c+ab(fc+cf)+(((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df)+f
+---
+> f+/********(f+/*******(f+/******(f+/*****(f+/****(f+/***(f+/**//**)/***)/****)/*****)/******)/*******)/********
+> (f+(a+b)**(fa+af+fb+bf)(a+b)**)/+(a+b)*/+fc+cf+fd+df
+> fa+af+(fa+af)b+a(fb+bf)+((fa+af)b+a(fb+bf))c+ab(fc+cf)+(((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df)+f+/**//**
+36,39c36,39
+< ((fa+af)b+a(fb+bf))c+ab(fc+cf)+((fb+bf)c+b(fc+cf))d+bc(fd+df)+(abcde)*f(abcde)*+(abcde)*(((((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df))e+abcd(fe+ef))(abcde)*
+< ((fa+af)b*+a(b*fb*+b*(fb+bf)b*))c+ab*(fc+cf)
+< (a*fa*+a*(fa+af)a*)b+a*(fb+bf)+fc+cf
+< (fa+af+fb+bf)c+(a+b)(fc+cf)+(fd+df)(a+(bc)*)+d(fa+af+(bc)*f(bc)*+(bc)*((fb+bf)c+b(fc+cf))(bc)*)
+---
+> ((fa+af)b+a(fb+bf))c+ab(fc+cf)+((fb+bf)c+b(fc+cf))d+bc(fd+df)+f+(abcde)**(((((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df))e+abcd(fe+ef))(abcde)**
+> ((fa+af)b*+a(f+b**(fb+bf)b**))c+ab*(fc+cf)
+> (f+a**(fa+af)a**)b+a*(fb+bf)+fc+cf
+> (fa+af+fb+bf)c+(a+b)(fc+cf)+(fd+df)(a+(bc)*)+d(fa+af+f+(bc)**((fb+bf)c+b(fc+cf))(bc)**)
+42,49c42,49
+< (fa+af)b*+a(b*fb*+b*(fb+bf)b*)
+< (a*fa*+a*(fa+af)a*)b+a*(fb+bf)
+< (ab)*f(ab)*+(ab)*((fa+af)b+a(fb+bf))(ab)*
+< fa+af+b*fb*+b*(fb+bf)b*
+< a*fa*+a*(fa+af)a*+fb+bf
+< (a+b)*f(a+b)*+(a+b)*(fa+af+fb+bf)(a+b)*
+< fa+af+fb+bf+fc+cf+fd+df+f
+< (fa+af)b+a(fb+bf)+(fb+bf)c+b(fc+cf)+(fc+cf)d+c(fd+df)
+---
+> (fa+af)b*+a(f+b**(fb+bf)b**)
+> (f+a**(fa+af)a**)b+a*(fb+bf)
+> f+(ab)**((fa+af)b+a(fb+bf))(ab)**
+> fa+af+f+b**(fb+bf)b**
+> f+a**(fa+af)a**+fb+bf
+> f+(a+b)**(fa+af+fb+bf)(a+b)**
+> fa+af+fb+bf+fc+cf+fd+df+f+/**//**
+> (fa+af)b+a(fb+bf)+(fb+bf)c+b(fc+cf)+(fc+cf)d+c(fd+df)+/
+52,66c52,66
+< (cd)*f(cd)*+(cd)*((fc+cf)d+c(fd+df))(cd)*+((a+/*)bc(/*+d))*f((a+/*)bc(/*+d))*+((a+/*)bc(/*+d))*((((fa+af+f)b+(a+/*)(fb+bf))c+(a+/*)b(fc+cf))(/*+d)+(a+/*)bc(f+fd+df))((a+/*)bc(/*+d))*
+< (((fa+af+f)(b+/*)+(a+/*)(fb+bf+f))(cd)*+(a+/*)(b+/*)((cd)*f(cd)*+(cd)*((fc+cf)d+c(fd+df))(cd)*))e+(a+/*)(b+/*)(cd)*(fe+ef)
+< (fa+af)(a+b+c+d)*+a((a+b+c+d)*f(a+b+c+d)*+(a+b+c+d)*(fa+af+fb+bf+fc+cf+fd+df)(a+b+c+d)*)
+< (dc)*f(dc)*+(dc)*((fd+df)c+d(fc+cf))(dc)*+((d+/*)cb(/*+a))*f((d+/*)cb(/*+a))*+((d+/*)cb(/*+a))*((((fd+df+f)c+(d+/*)(fc+cf))b+(d+/*)c(fb+bf))(/*+a)+(d+/*)cb(f+fa+af))((d+/*)cb(/*+a))*
+< (((fe+ef)(dc)*+e((dc)*f(dc)*+(dc)*((fd+df)c+d(fc+cf))(dc)*))(b+/*)+e(dc)*(fb+bf+f))(a+/*)+e(dc)*(b+/*)(fa+af+f)
+< ((a+b+c+d)*f(a+b+c+d)*+(a+b+c+d)*(fa+af+fb+bf+fc+cf+fd+df)(a+b+c+d)*)a+(a+b+c+d)*(fa+af)
+< /
+< ((fa+fa+af)b+a(fb+bf))c+ab(fc+cf)
+< /
+< ((fa+af)b+a(fb+bf))c+ab(fc+cf)+abcf
+< (abc)*f(abc)*+(abc)*(((fa+af)b+a(fb+bf))c+ab(fc+cf))(abc)*
+< ((fb+bf)c+b(fc+cf))(abc)*+bc((abc)*f(abc)*+(abc)*(((fa+af)b+a(fb+bf))c+ab(fc+cf))(abc)*)
+< (((abc)*f(abc)*+(abc)*(((fa+af)b+a(fb+bf))c+ab(fc+cf))(abc)*)a+(abc)*(fa+af))b+(abc)*a(fb+bf)
+< fa+af+(fa+af)b+a(fb+bf)+(fb+bf)c+b(fc+cf)+(((fb+bf)a+b(fa+af))c+ba(fc+cf))a+bac(fa+af)+(abcd)*f(abcd)*+(abcd)*((((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df))(abcd)*
+< ((caaaa+ab)*f(caaaa+ab)*+(caaaa+ab)*(((((fc+cf)a+c(fa+af))a+ca(fa+af))a+caa(fa+af))a+caaa(fa+af)+(fa+af)b+a(fb+bf))(caaaa+ab)*)a+(caaaa+ab)*(fa+af)+(fb+bf)b+b(fb+bf)
+---
+> f+(cd)**((fc+cf)d+c(fd+df))(cd)**+f+((a+/*)bc(/*+d))**((((fa+af+f+/**//**)b+(a+/*)(fb+bf))c+(a+/*)b(fc+cf))(/*+d)+(a+/*)bc(f+/**//**+fd+df))((a+/*)bc(/*+d))**
+> (((fa+af+f+/**//**)(b+/*)+(a+/*)(fb+bf+f+/**//**))(cd)*+(a+/*)(b+/*)(f+(cd)**((fc+cf)d+c(fd+df))(cd)**))e+(a+/*)(b+/*)(cd)*(fe+ef)
+> (fa+af)(a+b+c+d)*+a(f+(a+b+c+d)**(fa+af+fb+bf+fc+cf+fd+df)(a+b+c+d)**)
+> f+(dc)**((fd+df)c+d(fc+cf))(dc)**+f+((d+/*)cb(/*+a))**((((fd+df+f+/**//**)c+(d+/*)(fc+cf))b+(d+/*)c(fb+bf))(/*+a)+(d+/*)cb(f+/**//**+fa+af))((d+/*)cb(/*+a))**
+> (((fe+ef)(dc)*+e(f+(dc)**((fd+df)c+d(fc+cf))(dc)**))(b+/*)+e(dc)*(fb+bf+f+/**//**))(a+/*)+e(dc)*(b+/*)(fa+af+f+/**//**)
+> (f+(a+b+c+d)**(fa+af+fb+bf+fc+cf+fd+df)(a+b+c+d)**)a+(a+b+c+d)*(fa+af)
+> ((/a+/(fa+af))b+/a(fb+bf))c+/ab(fc+cf)
+> (((f+/**//**)a+/*(fa+af))b+/*a(fb+bf))c+/*ab(fc+cf)
+> (((fa+af)b+a(fb+bf))c+ab(fc+cf))/+abc/
+> (((fa+af)b+a(fb+bf))c+ab(fc+cf))/*+abc(f+/**//**)
+> f+(abc)**(((fa+af)b+a(fb+bf))c+ab(fc+cf))(abc)**
+> ((fb+bf)c+b(fc+cf))(abc)*+bc(f+(abc)**(((fa+af)b+a(fb+bf))c+ab(fc+cf))(abc)**)
+> ((f+(abc)**(((fa+af)b+a(fb+bf))c+ab(fc+cf))(abc)**)a+(abc)*(fa+af))b+(abc)*a(fb+bf)
+> fa+af+(fa+af)b+a(fb+bf)+(fb+bf)c+b(fc+cf)+(((fb+bf)a+b(fa+af))c+ba(fc+cf))a+bac(fa+af)+f+(abcd)**((((fa+af)b+a(fb+bf))c+ab(fc+cf))d+abc(fd+df))(abcd)**
+> (f+(caaaa+ab)**(((((fc+cf)a+c(fa+af))a+ca(fa+af))a+caa(fa+af))a+caaa(fa+af)+(fa+af)b+a(fb+bf))(caaaa+ab)**)a+(caaaa+ab)*(fa+af)+(fb+bf)b+b(fb+bf)
+68,90c68,90
+< (ab(c+/*))*f(ab(c+/*))*+(ab(c+/*))*(((fa+af)b+a(fb+bf))(c+/*)+ab(fc+cf+f))(ab(c+/*))*
+< (ab+bc(a+d)*)*f(ab+bc(a+d)*)*+(ab+bc(a+d)*)*((fa+af)b+a(fb+bf)+((fb+bf)c+b(fc+cf))(a+d)*+bc((a+d)*f(a+d)*+(a+d)*(fa+af+fd+df)(a+d)*))(ab+bc(a+d)*)*
+< f+f
+< a*fa*+a*(a*fa*+a*(fa+af)a*)a*
+< a*fa*+a*(a*fa*+a*(a*fa*+a*(a*fa*+a*(a*fa*+a*(fa+af)a*)a*)a*)a*)a*
+< a*fa*+a*(a*fa*+a*(fa+af)a*)a*
+< a*fa*+a*(a*fa*+a*(fa+af)a*)a*
+< /
+< /
+< /
+< (fc+cf)d+c(fd+df)
+< fa+fa+af
+< fa+af+af
+< fa+fa+af+af
+< fb+fb+bf
+< a*fa*+a*(fa+af+f)a*
+< a*fa*+a*(f+fa+af)a*
+< /**f/**+/**(f+f)/**
+< f+(fa+af)b+a(fb+bf)
+< (c+/*)*f(c+/*)*+(c+/*)*(f+fc+cf+f)(c+/*)*
+< /**f/**+/**(f+f)/**
+< f+f
+< (/*+/*+/*+/*)*f(/*+/*+/*+/*)*+(/*+/*+/*+/*)*(f+f+f+f+f)(/*+/*+/*+/*)*
+---
+> f+(ab(c+/*))**(((fa+af)b+a(fb+bf))(c+/*)+ab(fc+cf+f+/**//**))(ab(c+/*))**
+> f+(ab+bc(a+d)*)**((fa+af)b+a(fb+bf)+((fb+bf)c+b(fc+cf))(a+d)*+bc(f+(a+d)**(fa+af+fd+df)(a+d)**))(ab+bc(a+d)*)**
+> (f+/**//**)/*+/*(f+/**//**)
+> f+a***(f+a**(fa+af)a**)a***
+> f+a******(f+a*****(f+a****(f+a***(f+a**(fa+af)a**)a***)a****)a*****)a******
+> f+a***(f+a**(fa+af)a**)a***+/
+> /+f+a***(f+a**(fa+af)a**)a***
+> /(a+bc+def)+/(fa+af+(fb+bf)c+b(fc+cf)+((fd+df)e+d(fe+ef))f+de(ff+ff))
+> (((((fa+af)b+a(fb+bf))c+ab(fc+cf))/+abc/)d+abc/(fd+df))e+abc/d(fe+ef)
+> (((fa+af)/+a/)b+a/(fb+bf))c/d+a/b(((fc+cf)/+c/)d+c/(fd+df))
+> ((fa+af)/+a/)b+a/(fb+bf)+(fc+cf)d+c(fd+df)
+> (f+/**//**)a+/*(fa+af)
+> (fa+af)/*+a(f+/**//**)
+> ((f+/**//**)a+/*(fa+af))/*+/*a(f+/**//**)
+> (f+(/a)**(/a+/(fa+af))(/a)**)b+(/a)*(fb+bf)
+> f+(a+/*)**(fa+af+f+/**//**)(a+/*)**
+> f+(/*+a)**(f+/**//**+fa+af)(/*+a)**
+> f+(/*+/*)**(f+/**//**+f+/**//**)(/*+/*)**
+> f+(ab/c)**((((fa+af)b+a(fb+bf))/+ab/)c+ab/(fc+cf))(ab/c)**+(fa+af)b+a(fb+bf)
+> f+((/a)*+c+(d/)*)**(f+(/a)**(/a+/(fa+af))(/a)**+fc+cf+f+(d/)**((fd+df)/+d/)(d/)**)((/a)*+c+(d/)*)**
+> f+((a/a)*+(b/c)*)**(f+(a/a)**(((fa+af)/+a/)a+a/(fa+af))(a/a)**+f+(b/c)**(((fb+bf)/+b/)c+b/(fc+cf))(b/c)**)((a/a)*+(b/c)*)**
+> f+(a/a+/*)**(((fa+af)/+a/)a+a/(fa+af)+f+/**//**)(a/a+/*)**
+> f+(/*+/*+/*+/*+/*)**(f+/**//**+f+/**//**+f+/**//**+f+/**//**+f+/**//**)(/*+/*+/*+/*+/*)**
+92c92
+< (((a*fa*+a*(fa+af)a*)b*+a*(b*fb*+b*(fb+bf)b*))a*+a*b*(a*fa*+a*(fa+af)a*))c*+a*b*a*(c*fc*+c*(fc+cf)c*)
+---
+> (((f+a**(fa+af)a**)b*+a*(f+b**(fb+bf)b**))a*+a*b*(f+a**(fa+af)a**))c*+a*b*a*(f+c**(fc+cf)c**)
+94,96c94,96
+< ((ab)*f(ab)*+(ab)*((fa+af)b+a(fb+bf))(ab)*)c+(ab)*(fc+cf)
+< ((a+b)*f(a+b)*+(a+b)*(fa+af+fb+bf)(a+b)*+(a+b)*f)c+(a+b)*(fc+cf)
+< ((aa+b)*f(aa+b)*+(aa+b)*((fa+af)a+a(fa+af)+fb+bf)(aa+b)*)c+(aa+b)*(fc+cf)
+---
+> (f+(ab)**((fa+af)b+a(fb+bf))(ab)**)c+(ab)*(fc+cf)
+> ((f+(a+b)**(fa+af+fb+bf)(a+b)**)/*+(a+b)*(f+/**//**))c+(a+b)*/*(fc+cf)
+> (f+(aa+b)**((fa+af)a+a(fa+af)+fb+bf)(aa+b)**)c+(aa+b)*(fc+cf)
+99,100c99,100
+< (1+2)*f(1+2)*+(1+2)*(f1+1f+f2+2f)(1+2)*
+< (34+567a)*f(34+567a)*+(34+567a)*((f3+3f)4+3(f4+4f)+(((f5+5f)6+5(f6+6f))7+56(f7+7f))a+567(fa+af))(34+567a)*
+---
+> f+(1+2)**(f1+1f+f2+2f)(1+2)**
+> f+(34+567a)**((f3+3f)4+3(f4+4f)+(((f5+5f)6+5(f6+6f))7+56(f7+7f))a+567(fa+af))(34+567a)**
+^^^^^
+done
+
+testing arg --strip ...
+  Running the command:
+  (./regex_tool --strip a | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/strip-a.txt 2> test-outputs/strip-a-err.txt
+Output base name: strip-a
+    (terminated with zero status (status ignored))
+  test-outputs/strip-a.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/strip-a.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/strip-a.txt
+  outcomes match (correct)
+  Running the command:
+  (./regex_tool --strip b | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/strip-b.txt 2> test-outputs/strip-b-err.txt
+Output base name: strip-b
+    (terminated with zero status (status ignored))
+  test-outputs/strip-b.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/strip-b.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/strip-b.txt
+  outcomes match (correct)
+  Running the command:
+  (./regex_tool --strip c | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/strip-c.txt 2> test-outputs/strip-c-err.txt
+Output base name: strip-c
+    (terminated with zero status (status ignored))
+  test-outputs/strip-c.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/strip-c.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/strip-c.txt
+  outcomes match (correct)
+  Running the command:
+  (./regex_tool --strip d | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/strip-d.txt 2> test-outputs/strip-d-err.txt
+Output base name: strip-d
+    (terminated with zero status (status ignored))
+  test-outputs/strip-d.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/strip-d.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/strip-d.txt
+  outcomes match (correct)
+  Running the command:
+  (./regex_tool --strip e | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/strip-e.txt 2> test-outputs/strip-e-err.txt
+Output base name: strip-e
+    (terminated with zero status (status ignored))
+  test-outputs/strip-e.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/strip-e.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/strip-e.txt
+  outcomes match (correct)
+  Running the command:
+  (./regex_tool --strip f | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/strip-f.txt 2> test-outputs/strip-f-err.txt
+Output base name: strip-f
+    (terminated with zero status (status ignored))
+  test-outputs/strip-f.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/strip-f.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/strip-f.txt
+  outcomes match (correct)
+done
+
 ######################################################
 Summary for self-test:
 
 no-op:     35 points
-simplify:     0 points
+simplify:     10 points
 empty:     5 points
 has-epsilon:     5 points
 has-nonepsilon:     5 points
 uses:     5 points
 not-using:     5 points
 infinite:     5 points
-starts-with:     0 points
-TOTAL POINTS: 65/100
+starts-with:     5 points
+reverse:     5 points
+ends-with:     5 points
+prefixes:     5 points
+bs-for-a:     5 points
+insert:     0 points
+strip:     5 points
+TOTAL POINTS: 100/100
 ######################################################

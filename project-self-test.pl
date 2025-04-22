@@ -47,12 +47,12 @@ $submission_root = "solution";
     'not-using',
     'infinite',
     'starts-with',
-    #'reverse',
-    #'ends-with',
-    #'prefixes',
-    #'bs-for-a',
-    #'insert',
-    #'strip',
+    'reverse',
+    'ends-with',
+    'prefixes',
+    'bs-for-a',
+    'insert',
+    'strip',
 );
 
 # Hash of the possible command line arguments and their types

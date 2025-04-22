@@ -1,1 +1,1 @@
-Error: --not-using requires a single character argument.
+Error: --not-using requires one symbol argument
