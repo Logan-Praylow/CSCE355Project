@@ -1,0 +1,6 @@
+comments.txt exists -- making backup comments.bak
+diff: /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/not-using.txt: No such file or directory
+
+Done.
+Comments are in solution/comments.txt
+

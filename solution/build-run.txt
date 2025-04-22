@@ -1,0 +1,5 @@
+Build:
+gcc regex_tool.c -o regex_tool
+
+Run:
+./regex_tool

@@ -1,0 +1,289 @@
+Comments for self-test -------- Mon Apr 21, 2025 at 21:39:3 EDT
+parsing the build-run.txt file ... done
+
+building executable ...
+  gcc regex_tool.c -o regex_tool
+    succeeded
+ done
+    base command is "./regex_tool"
+
+Creating the file input-postfix.txt using the command
+    /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/in2post < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input.txt > /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt
+    done
+
+testing arg --no-op ...
+  Running the command:
+  (./regex_tool --no-op | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/no-op.txt 2> test-outputs/no-op-err.txt
+Output base name: no-op
+    (terminated with zero status (status ignored))
+  test-outputs/no-op.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/no-op.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/no-op.txt
+  outcomes match (correct)
+done
+
+testing arg --simplify ...
+  Running the command:
+  (./regex_tool --simplify | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/simplify.txt 2> test-outputs/simplify-err.txt
+Output base name: simplify
+    (terminated with zero status (status ignored))
+  test-outputs/simplify.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/simplify.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/simplify.txt
+  OUTCOMES DIFFER:
+vvvvv
+27c27
+< a
+---
+> a+a
+83,84c83,84
+< (a+/*)*
+< (/*+a)*
+---
+> a*
+> a*
+87c87
+< (/*+c+/*)*
+---
+> c*
+^^^^^
+done
+
+testing arg --empty ...
+  Running the command:
+  ./regex_tool --empty < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/empty.txt 2> test-outputs/empty-err.txt
+Output base name: empty
+    (terminated with zero status (status ignored))
+  test-outputs/empty.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/empty.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/empty.txt
+  outcomes match (correct)
+done
+
+testing arg --has-epsilon ...
+  Running the command:
+  ./regex_tool --has-epsilon < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/has-epsilon.txt 2> test-outputs/has-epsilon-err.txt
+Output base name: has-epsilon
+    (terminated with zero status (status ignored))
+  test-outputs/has-epsilon.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/has-epsilon.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/has-epsilon.txt
+  outcomes match (correct)
+done
+
+testing arg --has-nonepsilon ...
+  Running the command:
+  ./regex_tool --has-nonepsilon < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/has-nonepsilon.txt 2> test-outputs/has-nonepsilon-err.txt
+Output base name: has-nonepsilon
+    (terminated with zero status (status ignored))
+  test-outputs/has-nonepsilon.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/has-nonepsilon.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/has-nonepsilon.txt
+  outcomes match (correct)
+done
+
+testing arg --uses ...
+  Running the command:
+  ./regex_tool --uses a < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/uses-a.txt 2> test-outputs/uses-a-err.txt
+Output base name: uses-a
+    (terminated with zero status (status ignored))
+  test-outputs/uses-a.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/uses-a.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/uses-a.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --uses b < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/uses-b.txt 2> test-outputs/uses-b-err.txt
+Output base name: uses-b
+    (terminated with zero status (status ignored))
+  test-outputs/uses-b.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/uses-b.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/uses-b.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --uses c < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/uses-c.txt 2> test-outputs/uses-c-err.txt
+Output base name: uses-c
+    (terminated with zero status (status ignored))
+  test-outputs/uses-c.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/uses-c.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/uses-c.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --uses d < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/uses-d.txt 2> test-outputs/uses-d-err.txt
+Output base name: uses-d
+    (terminated with zero status (status ignored))
+  test-outputs/uses-d.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/uses-d.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/uses-d.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --uses e < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/uses-e.txt 2> test-outputs/uses-e-err.txt
+Output base name: uses-e
+    (terminated with zero status (status ignored))
+  test-outputs/uses-e.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/uses-e.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/uses-e.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --uses f < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/uses-f.txt 2> test-outputs/uses-f-err.txt
+Output base name: uses-f
+    (terminated with zero status (status ignored))
+  test-outputs/uses-f.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/uses-f.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/uses-f.txt
+  outcomes match (correct)
+done
+
+testing arg --not-using ...
+  Running the command:
+  (./regex_tool --not-using | /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/csce355-proj-utils/src/pre2in) < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/not-using.txt 2> test-outputs/not-using-err.txt
+Output base name: not-using
+    (terminated with zero status (status ignored))
+  standard error output:
+vvvvv
+Error: --not-using requires a single character argument.
+^^^^^
+  test-outputs/not-using.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/not-using.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/not-using.txt
+  outcomes match (correct)
+done
+
+testing arg --infinite ...
+  Running the command:
+  ./regex_tool --infinite < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/infinite.txt 2> test-outputs/infinite-err.txt
+Output base name: infinite
+    (terminated with zero status (status ignored))
+  test-outputs/infinite.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/infinite.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/infinite.txt
+  outcomes match (correct)
+done
+
+testing arg --starts-with ...
+  Running the command:
+  ./regex_tool --starts-with a < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-a.txt 2> test-outputs/starts-with-a-err.txt
+Output base name: starts-with-a
+    (terminated with zero status (status ignored))
+  test-outputs/starts-with-a.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/starts-with-a.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-a.txt
+  OUTCOMES DIFFER:
+vvvvv
+15d14
+< yes
+19d17
+< yes
+21c19,21
+< yes
+---
+> no
+> no
+> no
+33c33
+< yes
+---
+> no
+60c60
+< yes
+---
+> no
+76,78c76,78
+< yes
+< yes
+< yes
+---
+> no
+> no
+> no
+88,89c88,89
+< yes
+< yes
+---
+> no
+> no
+^^^^^
+  Running the command:
+  ./regex_tool --starts-with b < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-b.txt 2> test-outputs/starts-with-b-err.txt
+Output base name: starts-with-b
+    (terminated with zero status (status ignored))
+  test-outputs/starts-with-b.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/starts-with-b.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-b.txt
+  OUTCOMES DIFFER:
+vvvvv
+19d18
+< yes
+21c20,21
+< yes
+---
+> no
+> no
+33c33
+< yes
+---
+> no
+88c88
+< yes
+---
+> no
+^^^^^
+  Running the command:
+  ./regex_tool --starts-with c < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-c.txt 2> test-outputs/starts-with-c-err.txt
+Output base name: starts-with-c
+    (terminated with zero status (status ignored))
+  test-outputs/starts-with-c.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/starts-with-c.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-c.txt
+  OUTCOMES DIFFER:
+vvvvv
+21c21
+< yes
+---
+> no
+^^^^^
+  Running the command:
+  ./regex_tool --starts-with d < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-d.txt 2> test-outputs/starts-with-d-err.txt
+Output base name: starts-with-d
+    (terminated with zero status (status ignored))
+  test-outputs/starts-with-d.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/starts-with-d.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-d.txt
+  OUTCOMES DIFFER:
+vvvvv
+87c87
+< yes
+---
+> no
+^^^^^
+  Running the command:
+  ./regex_tool --starts-with e < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-e.txt 2> test-outputs/starts-with-e-err.txt
+Output base name: starts-with-e
+    (terminated with zero status (status ignored))
+  test-outputs/starts-with-e.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/starts-with-e.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-e.txt
+  outcomes match (correct)
+  Running the command:
+  ./regex_tool --starts-with f < /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/input-postfix.txt > test-outputs/starts-with-f.txt 2> test-outputs/starts-with-f-err.txt
+Output base name: starts-with-f
+    (terminated with zero status (status ignored))
+  test-outputs/starts-with-f.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  diff test-outputs/starts-with-f.txt /mnt/c/Users/logan/OneDrive/Desktop/CSCE355Project/test/starts-with-f.txt
+  outcomes match (correct)
+done
+
+######################################################
+Summary for self-test:
+
+no-op:     35 points
+simplify:     0 points
+empty:     5 points
+has-epsilon:     5 points
+has-nonepsilon:     5 points
+uses:     5 points
+not-using:     5 points
+infinite:     5 points
+starts-with:     0 points
+TOTAL POINTS: 65/100
+######################################################
